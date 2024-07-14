@@ -5,7 +5,7 @@ dotenv.config({ path: envPath });
 
 import express, { Express, Request, Response } from 'express';
 import cors from 'cors';
-import { router } from '../router';
+import { router } from '../routes/auth.route';
 import { Model } from 'objection';
 import Knex from 'knex';
 import configs from '../knexfile';
