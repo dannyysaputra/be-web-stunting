@@ -7,6 +7,10 @@
   },
   "servers": [
     {
+      "url": "https://api-web-stunting.up.railway.app/api/v1",
+      "description": "Deploy"
+    },
+    {
       "url": "http://localhost:3000/api/v1",
       "description": "Local server"
     }
