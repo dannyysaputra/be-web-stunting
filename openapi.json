@@ -1,0 +1,209 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "User Registration API",
+    "description": "API for user registration with file upload.",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000/api/v1",
+      "description": "Local server"
+    }
+  ],
+  "paths": {
+    "/auth/register": {
+      "post": {
+        "summary": "Register a new user",
+        "tags": ["Users"],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "example": "User",
+                    "description": "User's full name"
+                  },
+                  "email": {
+                    "type": "string",
+                    "format": "email",
+                    "example": "user@gmail.com",
+                    "description": "User's email address"
+                  },
+                  "handphone_number": {
+                    "type": "string",
+                    "example": "08888888",
+                    "description": "User's handphone number"
+                  },
+                  "password": {
+                    "type": "string",
+                    "example": "useruser1234",
+                    "description": "User's password (must be at least 12 characters)"
+                  },
+                  "file": {
+                    "type": "string",
+                    "format": "binary",
+                    "description": "User's avatar image file"
+                  }
+                },
+                "required": [
+                  "name",
+                  "email",
+                  "handphone_number",
+                  "password",
+                  "file"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "User successfully registered",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "Success"
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "User successfully registered"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string",
+                          "format": "uuid",
+                          "example": "d1f9d7f2-6c1f-4d91-bac8-767644b1fb44"
+                        },
+                        "name": {
+                          "type": "string",
+                          "example": "User"
+                        },
+                        "email": {
+                          "type": "string",
+                          "format": "email",
+                          "example": "user@gmail.com"
+                        },
+                        "handphoneNumber": {
+                          "type": "string",
+                          "example": "0888888888"
+                        },
+                        "avatar": {
+                          "type": "string",
+                          "example": "https://example.cloudinary.com"
+                        },
+                        "role_id": {
+                          "type": "number",
+                          "example": "1"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "Failed"
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Please provide a valid input"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "Failed"
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Internal Server Error"
+                    },
+                    "error": {
+                      "type": "string",
+                      "example": "Detailed error message"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "User": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "d1f9d7f2-6c1f-4d91-bac8-767644b1fb44"
+          },
+          "name": {
+            "type": "string",
+            "example": "User"
+          },
+          "email": {
+            "type": "string",
+            "format": "email",
+            "example": "user@gmail.com"
+          },
+          "handphoneNumber": {
+            "type": "string",
+            "example": "0888888888"
+          },
+          "avatar": {
+            "type": "string",
+            "example": "https://example.cloudinary.com"
+          },
+          "role_id": {
+            "type": "number",
+            "example": "1"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "example": "2024-07-12T10:49:35Z"
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time",
+            "example": "2024-07-12T10:49:35Z"
+          }
+        }
+      }
+    }
+  }
+}
