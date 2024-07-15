@@ -68,4 +68,45 @@ export class AuthController {
             });
         }
     }
+
+    public static async login(req: Request, res: Response): Promise<Response> {
+        try {
+            const { email, password } = req.body;
+
+            const user = await userService.findUserByEmail(email);
+
+            if (!user) {
+                return res.status(404).json({
+                    status: "Failed",
+                    message: "Email not found"
+                });
+            }
+
+            const isPasswordCorrect = await userService.verifyPassword(user.password, password);
+
+            if (!isPasswordCorrect) {
+                return res.status(401).json({ status: "Failed", message: "Wrong password" });
+            }
+
+            const token = await userService.generateToken(user);
+
+            return res.status(200).json({
+                status: "Success",
+                message: "Login successful",
+                data: {
+                    id: user.id,
+                    name: user.name,
+                    email: user.email,
+                    handphoneNumber: user.handphone_number,
+                    avatar: user.avatar,
+                    token,
+                    role_id: user.role_id,
+                    created_at: user.created_at,
+                    updated_at: user.updated_at
+                }
+            })
+        } catch (error) {
+            return res.status(500).json({ status: "Failed", message: "Internal server error" })
+        }
+    }
 }
