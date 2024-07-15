@@ -98,7 +98,7 @@
                           "format": "email",
                           "example": "user@gmail.com"
                         },
-                        "handphoneNumber": {
+                        "handphone_number": {
                           "type": "string",
                           "example": "0888888888"
                         },
@@ -155,6 +155,164 @@
                     "error": {
                       "type": "string",
                       "example": "Detailed error message"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/auth/login": {
+      "post": {
+        "summary": "Login user",
+        "tags": ["Users"],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "email": {
+                    "type": "string",
+                    "format": "email",
+                    "example": "user@gmail.com",
+                    "description": "User's email address"
+                  },
+                  "password": {
+                    "type": "string",
+                    "example": "useruser1234",
+                    "description": "User's password"
+                  }
+                },
+                "required": [
+                  "email",
+                  "password"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success login",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "Success"
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Login successful"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string",
+                          "format": "uuid",
+                          "example": "d1f9d7f2-6c1f-4d91-bac8-767644b1fb44"
+                        },
+                        "name": {
+                          "type": "string",
+                          "example": "User"
+                        },
+                        "email": {
+                          "type": "string",
+                          "format": "email",
+                          "example": "user@gmail.com"
+                        },
+                        "handphone_number": {
+                          "type": "string",
+                          "example": "0888888888"
+                        },
+                        "avatar": {
+                          "type": "string",
+                          "example": "https://example.cloudinary.com"
+                        },
+                        "token": {
+                          "type": "string",
+                          "example": "eyJhbGciOXVCJ9.MToyNi45NTRaIiwidXBkYXRlZEF0IjoiMjAyNC0wNy0xNFQxMTo0MToyNi45NTRaIiwiaWF0IjoxNzIxMDIwNzk2LCJleHAiOjE3MjExMDcxOTZ9.-C93X5t_QzreFU6_qjbLWJRvXhHMQZUL8Ql3S2rC7I4"
+                        },
+                        "role_id": {
+                          "type": "number",
+                          "example": "1"
+                        },
+                        "created_at": {
+                          "type": "datetime",
+                          "example": "2024-07-12T10:49:35Z"
+                        },
+                        "updated_at": {
+                          "type": "datetime",
+                          "example": "2024-07-12T10:49:35Z"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Invalid email",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "Failed"
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Email not found"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Wrong password",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "Failed"
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Wrong password"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "Failed"
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Internal Server Error"
                     }
                   }
                 }
