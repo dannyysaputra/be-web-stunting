@@ -38,13 +38,17 @@ export class UserService {
         return await checkPassword(storedPassword, providedPassword);
       }
     
-      public async generateToken(user: UserType): Promise<string> {
-        return await createToken({
-          id: user.id,
-          email: user.email,
-          role: user.role_id,
-          createdAt: user.created_at,
-          updatedAt: user.updated_at
-        });
-      }
+    public async generateToken(user: UserType): Promise<string> {
+    return await createToken({
+        id: user.id,
+        email: user.email,
+        role: user.role_id,
+        createdAt: user.created_at,
+        updatedAt: user.updated_at
+    });
+    }
+
+    public async googleId(user: UserType, googleId: string): Promise<void> {
+        await this.userRepository.createGoogleId(user, googleId);
+    }
 }
