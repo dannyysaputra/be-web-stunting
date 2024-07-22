@@ -1,8 +1,8 @@
 import { ArticleModel, ArticleType } from "../models/ArticleModel";
 
 export class ArticleRepository {
-    public async findByTitle(title: string): Promise<ArticleType | undefined> {
-        return await ArticleModel.query().findOne({ title });
+    public async findByTitle(title: string): Promise<ArticleType[] | undefined> {
+        return await ArticleModel.query().where('title', 'like', `%${title}%`);
     }
 
     public async findById(id: number): Promise<ArticleType | undefined> {

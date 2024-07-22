@@ -25,7 +25,7 @@ export class ArticleService {
         return this.articleRepository.delete(id);
     }
 
-    public async findArticleByTitle(title: string): Promise<ArticleType | undefined> {
+    public async findArticleByTitle(title: string): Promise<ArticleType[] | undefined> {
         return this.articleRepository.findByTitle(title);
     }
 
