@@ -126,4 +126,36 @@ export class ArticleController {
             });
         }
     }
+
+    public static async delete(req: Request, res: Response): Promise<Response> {
+        const { id } = req.params;
+        const articleId = parseInt(id);
+        
+        try {
+            const isExist = await articleService.findArticleById(articleId);
+
+            if (!isExist) {
+                return res.status(404).json({
+                    status: "Failed",
+                    message: "Article not found"
+                })
+            }
+
+            const isDeleted = await articleService.deleteArticle(articleId);
+
+            // failed to delete
+            if (isDeleted === 0) { 
+                return res.status(500).json({ status: "Failed", message: "Internal Server Error" });
+
+            }
+
+            return res.status(201).json({
+                status: "Success",
+                message: "Car successfully deleted"
+            })
+        } catch (error) {
+            console.error('Error deleting car:', error);
+            return res.status(500).json({ status: "Failed", message: "Internal Server Error", error: error });
+        }
+    }
 }

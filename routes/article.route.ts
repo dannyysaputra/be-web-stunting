@@ -9,5 +9,6 @@ router.post("/", authorize, checkAccess(['admin']), upload.single('poster'), Art
 router.get("/", ArticleController.getArticles);
 router.get("/:title", ArticleController.getArticles);
 router.put("/:id", authorize, checkAccess(['admin']), upload.single('poster'), ArticleController.update);
+router.delete("/:id", authorize, checkAccess(['admin']), ArticleController.delete);
 
 export default router;
