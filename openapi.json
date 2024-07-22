@@ -48,9 +48,8 @@
                     "example": "useruser1234",
                     "description": "User's password (must be at least 12 characters)"
                   },
-                  "file": {
-                    "type": "string",
-                    "format": "binary",
+                  "avatar": {
+                    "type": "file",
                     "description": "User's avatar image file"
                   }
                 },

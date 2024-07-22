@@ -15,13 +15,16 @@ export class UserService {
     public async registerUser(userData: Partial<UserType>): Promise<UserType> {
         userData.password = await encryptPassword(userData.password as string);
 
-        let role = await this.roleRepository.findByName("user");
-
-        if (role === undefined) {
-            role = await this.roleRepository.createRole({ role_name: "user" });
+        // not admin
+        if (!userData.role_id) {
+            let role = await this.roleRepository.findByName("user");
+    
+            if (role === undefined) {
+                role = await this.roleRepository.createRole({ role_name: "user" });
+            }
+    
+            userData.role_id = role?.id;
         }
-
-        userData.role_id = role?.id;
 
         return this.userRepository.createUser(userData);
     }

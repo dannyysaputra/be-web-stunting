@@ -35,7 +35,7 @@ export class AuthController {
                     message: "Email already exists"
                 })
             }
-            
+
             if (!req.file) {
                 return res.status(400).json({ 
                     status: "Failed",
@@ -61,7 +61,8 @@ export class AuthController {
                 email, 
                 handphone_number, 
                 avatar: image.secure_url, 
-                password 
+                password,
+                role_id: 2 
             });
 
             return res.status(201).json({
@@ -92,7 +93,7 @@ export class AuthController {
                 });
             }
 
-            const isPasswordCorrect = await userService.verifyPassword(user.password, password);
+            const isPasswordCorrect = await userService.verifyPassword(user.password as string, password);
 
             if (!isPasswordCorrect) {
                 return res.status(401).json({ status: "Failed", message: "Wrong password" });
