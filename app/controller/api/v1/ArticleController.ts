@@ -80,4 +80,50 @@ export class ArticleController {
             });
         }
     }
+
+    public static async update(req: Request, res: Response): Promise<Response> {
+        const { id } = req.params;
+        const articleId = parseInt(id);
+
+        const { title, content, link }: ArticleType = req.body;
+        const userId = req.user?.id;
+
+        try {
+            const isExist = await articleService.findArticleById(articleId);
+
+            if (!isExist) {
+                return res.status(404).json({ status: "Failed", message: "Article not found" });
+            }
+
+            let imageUrl: string | undefined;
+            if (req.file) {
+                const image = await uploadToCloudinary(req.file?.buffer, req.file?.mimetype, 'choco/poster');
+                imageUrl = image.secure_url;
+
+                if (!imageUrl) {
+                    return res.status(500).json({ status: "Failed", message: 'Cannot retrieve image from Cloudinary' });
+                }
+            }
+
+            const article = await articleService.updateArticle(articleId, {
+                title,
+                content,
+                link,
+                created_by: userId
+            }, imageUrl);
+
+            return res.status(201).json({
+                status: "Success",
+                message: "Article updated successfully",
+                data: article
+            })
+        } catch (error) {
+            console.error("Internal Server Error:", error);
+            return res.status(500).json({ 
+                status: "Failed", 
+                message: 'Internal Server Error',
+                error: error
+            });
+        }
+    }
 }

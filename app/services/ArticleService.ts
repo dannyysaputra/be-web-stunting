@@ -16,8 +16,16 @@ export class ArticleService {
         return this.articleRepository.getAll();
     }
 
-    public async updateArticle(id: number, articleData: Partial<ArticleType>): Promise<ArticleType> {
-        return this.articleRepository.update(id, articleData);
+    public async updateArticle(id: number, articleData: Partial<ArticleType>, image?: string): Promise<ArticleType> {
+        const updateData: Partial<ArticleType> = {...articleData};
+        console.log(updateData);
+        
+        
+        if (image) {
+            updateData.poster = image;
+        }
+
+        return this.articleRepository.update(id, updateData);
     }
 
 
