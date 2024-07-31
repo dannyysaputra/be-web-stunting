@@ -62,7 +62,7 @@ export class AuthController {
                 handphone_number, 
                 avatar: image.secure_url, 
                 password,
-                role_id: 2 
+                role_id: 2,                
             });
 
             return res.status(201).json({
