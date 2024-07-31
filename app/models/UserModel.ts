@@ -5,11 +5,12 @@ export type UserType = {
     name: string;
     email: string;
     handphone_number: string;
-    password: string;
+    password: string | null;
     avatar: string;
     role_id: number;
     created_at: Date;
     updated_at: Date;
+    google_id: string;
 }
 
 export class UserModel extends BaseModel {
@@ -19,7 +20,8 @@ export class UserModel extends BaseModel {
     name!: string;
     email!: string;
     handphone_number!: string;
-    password!: string;
+    password!: string | null;
     avatar!: string;
     role_id!: number;
+    google_id!: string;
 }

@@ -20,4 +20,11 @@ export class UserRepository {
     public async deleteUser(id: string): Promise<number> {
         return await UserModel.query().deleteById(id);
     }
+
+    public async createGoogleId(user: UserType, googleId: string): Promise<void> {
+        await UserModel.query().where({ id: user.id }).patch({
+            ...user,
+            google_id: googleId
+        })
+    }
 }

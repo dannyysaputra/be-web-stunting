@@ -15,13 +15,16 @@ export class UserService {
     public async registerUser(userData: Partial<UserType>): Promise<UserType> {
         userData.password = await encryptPassword(userData.password as string);
 
-        let role = await this.roleRepository.findByName("user");
-
-        if (role === undefined) {
-            role = await this.roleRepository.createRole({ role_name: "user" });
+        // not admin
+        if (!userData.role_id) {
+            let role = await this.roleRepository.findByName("user");
+    
+            if (role === undefined) {
+                role = await this.roleRepository.createRole({ role_name: "user" });
+            }
+    
+            userData.role_id = role?.id;
         }
-
-        userData.role_id = role?.id;
 
         return this.userRepository.createUser(userData);
     }
@@ -38,13 +41,17 @@ export class UserService {
         return await checkPassword(storedPassword, providedPassword);
       }
     
-      public async generateToken(user: UserType): Promise<string> {
-        return await createToken({
-          id: user.id,
-          email: user.email,
-          role: user.role_id,
-          createdAt: user.created_at,
-          updatedAt: user.updated_at
-        });
-      }
+    public async generateToken(user: UserType): Promise<string> {
+    return await createToken({
+        id: user.id,
+        email: user.email,
+        role: user.role_id,
+        createdAt: user.created_at,
+        updatedAt: user.updated_at
+    });
+    }
+
+    public async googleId(user: UserType, googleId: string): Promise<void> {
+        await this.userRepository.createGoogleId(user, googleId);
+    }
 }

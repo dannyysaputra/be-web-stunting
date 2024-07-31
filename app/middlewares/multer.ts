@@ -16,7 +16,7 @@ const storage = multer.memoryStorage();
 
 const upload = multer({ 
     storage: storage,
-    fileFilter: validateFileType(['image/bmp', 'image/jpeg', 'image/x-png', 'image/png', 'image/gif']),
+    fileFilter: validateFileType(['image/bmp', 'image/jpeg', 'image/jpg', 'image/x-png', 'image/png', 'image/gif']),
     limits: { fileSize: 2000000 } //2mb
 });
 
