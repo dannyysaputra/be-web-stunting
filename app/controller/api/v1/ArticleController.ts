@@ -151,10 +151,10 @@ export class ArticleController {
 
             return res.status(201).json({
                 status: "Success",
-                message: "Car successfully deleted"
+                message: "Article successfully deleted"
             })
         } catch (error) {
-            console.error('Error deleting car:', error);
+            console.error('Error deleting article:', error);
             return res.status(500).json({ status: "Failed", message: "Internal Server Error", error: error });
         }
     }
