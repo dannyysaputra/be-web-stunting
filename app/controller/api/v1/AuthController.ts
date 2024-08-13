@@ -36,31 +36,22 @@ export class AuthController {
                 })
             }
 
-            if (!req.file) {
-                return res.status(400).json({ 
-                    status: "Failed",
-                    message: 'No Image Uploaded' 
-                });
-            }
+            let avatarUrl = null;
+            if (req.file) {
+                const image = await uploadToCloudinary(req.file?.buffer, req.file?.mimetype, 'choco/avatar');
 
-            if (password.length < 12) {
-                return res.status(400).json({
-                    status: "Failed",
-                    message: "Password must be at least 12 characters"
-                })
-            }
+                if (!image.secure_url) {
+                    return res.status(500).json({ status: "Failed", message: 'Cannot retrieve image from Cloudinary' });
+                }
 
-            const image = await uploadToCloudinary(req.file?.buffer, req.file?.mimetype, 'choco/avatar');
-
-            if (!image.secure_url) {
-                return res.status(500).json({ status: "Failed", message: 'Cannot retrieve image from Cloudinary' });
+                avatarUrl = image.secure_url;
             }
 
             const user = await userService.registerUser({ 
                 name, 
                 email, 
                 handphone_number, 
-                avatar: image.secure_url, 
+                avatar: avatarUrl, 
                 password,
                 role_id: 2,                
             });
