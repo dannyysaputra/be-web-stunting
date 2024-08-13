@@ -6,7 +6,7 @@ export type UserType = {
     email: string;
     handphone_number: string;
     password: string | null;
-    avatar: string;
+    avatar: string | null;
     role_id: number;
     created_at: Date;
     updated_at: Date;
