@@ -36,13 +36,9 @@ export class AuthController {
                 })
             }
 
-            let avatarUrl = null;
+            let avatarUrl;
             if (req.file) {
                 const image = await uploadToCloudinary(req.file?.buffer, req.file?.mimetype, 'choco/avatar');
-
-                if (!image.secure_url) {
-                    return res.status(500).json({ status: "Failed", message: 'Cannot retrieve image from Cloudinary' });
-                }
 
                 avatarUrl = image.secure_url;
             }
