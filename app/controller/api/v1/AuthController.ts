@@ -49,7 +49,7 @@ export class AuthController {
                 handphone_number, 
                 avatar: avatarUrl, 
                 password,
-                role_id: 2,                
+                role_id: 1,                
             });
 
             return res.status(201).json({
