@@ -574,6 +574,147 @@
           }
         }
       }
+    },
+    "/anthropometry": {
+      "post": {
+        "summary": "Create a new anthropometry record and calculate results",
+        "tags": ["Anthropometry"],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AnthropometryType"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Anthropometry data was successfully created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "Success"
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Anthropometry data was successfully created"
+                    },
+                    "data": {
+                      "$ref": "#/components/schemas/AnthropometryResponse"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "Failed"
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Please provide a valid input"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "Failed"
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Internal server error"
+                    },
+                    "error": {
+                      "type": "string",
+                      "example": "Error details"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "summary": "Get anthropometries records",
+        "tags": ["Anthropometry"],
+        "responses": {
+          "200": {
+            "description": "Anthropometry data was successfully retrieved",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "Success"
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Anthropometry data was successfully retrieved"
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/AnthropometryResponse"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "Failed"
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Internal server error"
+                    },
+                    "error": {
+                      "type": "string",
+                      "example": "Error details"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
@@ -684,6 +825,110 @@
             "type": "datetime",
             "example": "2024-07-12T10:49:35Z",
             "description": "Updated user date"
+          }
+        }
+      },
+      "AnthropometryType": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "example": "John Doe"
+          },
+          "measurement_date": {
+            "type": "string",
+            "format": "date-time",
+            "example": "2024-08-01T00:00:00Z"
+          },
+          "birth_date": {
+            "type": "string",
+            "format": "date-time",
+            "example": "2020-01-01T00:00:00Z"
+          },
+          "gender": {
+            "type": "string",
+            "example": "male"
+          },
+          "weight": {
+            "type": "number",
+            "format": "float",
+            "example": 15.0
+          },
+          "height": {
+            "type": "number",
+            "format": "float",
+            "example": 100.5
+          },
+          "head_circumference": {
+            "type": "number",
+            "format": "float",
+            "example": 48.0
+          },
+          "arm_circumference": {
+            "type": "number",
+            "format": "float",
+            "example": 16.5
+          }
+        }
+      },
+      "AnthropometryResponse": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "example": 1
+          },
+          "name": {
+            "type": "string",
+            "example": "John Doe"
+          },
+          "measurement_date": {
+            "type": "string",
+            "format": "date-time",
+            "example": "2024-08-01T00:00:00Z"
+          },
+          "birth_date": {
+            "type": "string",
+            "format": "date-time",
+            "example": "2020-01-01T00:00:00Z"
+          },
+          "gender": {
+            "type": "string",
+            "example": "male"
+          },
+          "weight": {
+            "type": "number",
+            "format": "float",
+            "example": 15.0
+          },
+          "height": {
+            "type": "number",
+            "format": "float",
+            "example": 100.5
+          },
+          "head_circumference": {
+            "type": "number",
+            "format": "float",
+            "example": 48.0
+          },
+          "arm_circumference": {
+            "type": "number",
+            "format": "float",
+            "example": 16.5
+          },
+          "user_id": {
+            "type": "string",
+            "example": "b196f6cd-8a66-4cb5-a337-c3dada7b99ee"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "example": "2024-08-01T00:00:00Z"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time",
+            "example": "2024-08-01T00:00:00Z"
           }
         }
       }
