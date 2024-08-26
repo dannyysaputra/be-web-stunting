@@ -1,8 +1,10 @@
 import { Request, Response } from "express";
 import { AnthropometryService } from "../../../services/AnthropometryService";
+import { AnthropometryResultService } from "../../../services/AnthropometryResultService";
 import { AnthropometryType } from "../../../models/AnthropometryModel";
 
 const anthropometryService = new AnthropometryService();
+const anthropometryResultService = new AnthropometryResultService();
 
 export class AnthropometryController {
     public static async create(req: Request, res: Response): Promise<Response> {
@@ -31,6 +33,36 @@ export class AnthropometryController {
                 user_id: userId,
             })
 
+            // Calculate AnthropometryResult based on the newly created entry
+            const measurementDate = new Date(measurement_date);
+            const birthDate = new Date(birth_date);
+
+            if (isNaN(measurementDate.getTime()) || isNaN(birthDate.getTime())) {
+                throw new Error("Invalid date format");
+            }
+
+            // Convert Date objects to milliseconds
+            const ageInMilliseconds = measurementDate.getTime() - birthDate.getTime();
+            const ageInYears = ageInMilliseconds / (1000 * 60 * 60 * 24 * 365.25);
+
+            const bb_u = weight / ageInYears;
+            const tb_u = height / ageInYears;
+            const bb_tb = weight / height;
+            const imt_u = weight / (height * height);
+            const lk_u = head_circumference / ageInYears;
+            const lla_u = arm_circumference / ageInYears;
+
+            // Create AnthropometryResult using the anthropometry ID
+            await anthropometryResultService.createData({
+                anthropometry_id: data.id,
+                bb_u,
+                tb_u,
+                bb_tb,
+                imt_u,
+                lk_u,
+                lla_u
+            });
+
             return res.status(201).json({
                 status: "Success",
                 message: "Anthropometry data was successfully created",
@@ -49,6 +81,15 @@ export class AnthropometryController {
     public static async getAnthropometries(req: Request, res: Response): Promise<Response> {
         try {
             const userId = req.user?.id;
+
+            if (!userId) {
+                return res.status(400).json({
+                    status: "Failed",
+                    message: "User does not exist"
+                });
+            }
+
+            console.log("user id: ", userId);
 
             const datas = await anthropometryService.findDataByUserId(userId);
             
