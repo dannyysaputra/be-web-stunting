@@ -1,0 +1,611 @@
+[
+  {
+    "umur_bulan": 0,
+    "minus_3_sd": 43.6,
+    "minus_2_sd": 45.4,
+    "minus_1_sd": 47.3,
+    "Median": 49.1,
+    "plus_1_sd": 51.0,
+    "plus_2_sd": 52.9,
+    "plus_3_sd": 54.7
+  },
+  {
+    "umur_bulan": 1,
+    "minus_3_sd": 47.8,
+    "minus_2_sd": 49.8,
+    "minus_1_sd": 51.7,
+    "Median": 53.7,
+    "plus_1_sd": 55.6,
+    "plus_2_sd": 57.6,
+    "plus_3_sd": 59.5
+  },
+  {
+    "umur_bulan": 2,
+    "minus_3_sd": 51.0,
+    "minus_2_sd": 53.0,
+    "minus_1_sd": 55.0,
+    "Median": 57.1,
+    "plus_1_sd": 59.1,
+    "plus_2_sd": 61.1,
+    "plus_3_sd": 63.2
+  },
+  {
+    "umur_bulan": 3,
+    "minus_3_sd": 53.5,
+    "minus_2_sd": 55.6,
+    "minus_1_sd": 57.7,
+    "Median": 59.8,
+    "plus_1_sd": 61.9,
+    "plus_2_sd": 64.0,
+    "plus_3_sd": 66.1
+  },
+  {
+    "umur_bulan": 4,
+    "minus_3_sd": 55.6,
+    "minus_2_sd": 57.8,
+    "minus_1_sd": 59.9,
+    "Median": 62.1,
+    "plus_1_sd": 64.3,
+    "plus_2_sd": 66.4,
+    "plus_3_sd": 68.6
+  },
+  {
+    "umur_bulan": 5,
+    "minus_3_sd": 57.4,
+    "minus_2_sd": 59.6,
+    "minus_1_sd": 61.8,
+    "Median": 64.0,
+    "plus_1_sd": 66.2,
+    "plus_2_sd": 68.5,
+    "plus_3_sd": 70.7
+  },
+  {
+    "umur_bulan": 6,
+    "minus_3_sd": 58.9,
+    "minus_2_sd": 61.2,
+    "minus_1_sd": 63.5,
+    "Median": 65.7,
+    "plus_1_sd": 68.0,
+    "plus_2_sd": 70.3,
+    "plus_3_sd": 72.5
+  },
+  {
+    "umur_bulan": 7,
+    "minus_3_sd": 60.3,
+    "minus_2_sd": 62.7,
+    "minus_1_sd": 65.0,
+    "Median": 67.3,
+    "plus_1_sd": 69.6,
+    "plus_2_sd": 71.9,
+    "plus_3_sd": 74.2
+  },
+  {
+    "umur_bulan": 8,
+    "minus_3_sd": 61.7,
+    "minus_2_sd": 64.0,
+    "minus_1_sd": 66.4,
+    "Median": 68.7,
+    "plus_1_sd": 71.1,
+    "plus_2_sd": 73.5,
+    "plus_3_sd": 75.8
+  },
+  {
+    "umur_bulan": 9,
+    "minus_3_sd": 62.9,
+    "minus_2_sd": 65.3,
+    "minus_1_sd": 67.7,
+    "Median": 70.1,
+    "plus_1_sd": 72.6,
+    "plus_2_sd": 75.0,
+    "plus_3_sd": 77.4
+  },
+  {
+    "umur_bulan": 10,
+    "minus_3_sd": 64.1,
+    "minus_2_sd": 66.5,
+    "minus_1_sd": 69.0,
+    "Median": 71.5,
+    "plus_1_sd": 73.9,
+    "plus_2_sd": 76.4,
+    "plus_3_sd": 78.9
+  },
+  {
+    "umur_bulan": 11,
+    "minus_3_sd": 65.2,
+    "minus_2_sd": 67.7,
+    "minus_1_sd": 70.3,
+    "Median": 72.8,
+    "plus_1_sd": 75.3,
+    "plus_2_sd": 77.8,
+    "plus_3_sd": 80.3
+  },
+  {
+    "umur_bulan": 12,
+    "minus_3_sd": 66.3,
+    "minus_2_sd": 68.9,
+    "minus_1_sd": 71.4,
+    "Median": 74.0,
+    "plus_1_sd": 76.6,
+    "plus_2_sd": 79.2,
+    "plus_3_sd": 81.7
+  },
+  {
+    "umur_bulan": 13,
+    "minus_3_sd": 67.3,
+    "minus_2_sd": 70.0,
+    "minus_1_sd": 72.6,
+    "Median": 75.2,
+    "plus_1_sd": 77.8,
+    "plus_2_sd": 80.5,
+    "plus_3_sd": 83.1
+  },
+  {
+    "umur_bulan": 14,
+    "minus_3_sd": 68.3,
+    "minus_2_sd": 71.0,
+    "minus_1_sd": 73.7,
+    "Median": 76.4,
+    "plus_1_sd": 79.1,
+    "plus_2_sd": 81.7,
+    "plus_3_sd": 84.4
+  },
+  {
+    "umur_bulan": 15,
+    "minus_3_sd": 69.3,
+    "minus_2_sd": 72.0,
+    "minus_1_sd": 74.8,
+    "Median": 77.5,
+    "plus_1_sd": 80.2,
+    "plus_2_sd": 83.0,
+    "plus_3_sd": 85.7
+  },
+  {
+    "umur_bulan": 16,
+    "minus_3_sd": 70.2,
+    "minus_2_sd": 73.0,
+    "minus_1_sd": 75.8,
+    "Median": 78.6,
+    "plus_1_sd": 81.4,
+    "plus_2_sd": 84.2,
+    "plus_3_sd": 87.0
+  },
+  {
+    "umur_bulan": 17,
+    "minus_3_sd": 71.1,
+    "minus_2_sd": 74.0,
+    "minus_1_sd": 76.8,
+    "Median": 79.7,
+    "plus_1_sd": 82.5,
+    "plus_2_sd": 85.4,
+    "plus_3_sd": 88.2
+  },
+  {
+    "umur_bulan": 18,
+    "minus_3_sd": 72.0,
+    "minus_2_sd": 74.9,
+    "minus_1_sd": 77.8,
+    "Median": 80.7,
+    "plus_1_sd": 83.6,
+    "plus_2_sd": 86.5,
+    "plus_3_sd": 89.4
+  },
+  {
+    "umur_bulan": 19,
+    "minus_3_sd": 72.8,
+    "minus_2_sd": 75.8,
+    "minus_1_sd": 78.8,
+    "Median": 81.7,
+    "plus_1_sd": 84.7,
+    "plus_2_sd": 87.6,
+    "plus_3_sd": 90.6
+  },
+  {
+    "umur_bulan": 20,
+    "minus_3_sd": 73.7,
+    "minus_2_sd": 76.7,
+    "minus_1_sd": 79.7,
+    "Median": 82.7,
+    "plus_1_sd": 85.7,
+    "plus_2_sd": 88.7,
+    "plus_3_sd": 91.7
+  },
+  {
+    "umur_bulan": 21,
+    "minus_3_sd": 74.5,
+    "minus_2_sd": 77.5,
+    "minus_1_sd": 80.6,
+    "Median": 83.7,
+    "plus_1_sd": 86.7,
+    "plus_2_sd": 89.8,
+    "plus_3_sd": 92.9
+  },
+  {
+    "umur_bulan": 22,
+    "minus_3_sd": 75.2,
+    "minus_2_sd": 78.4,
+    "minus_1_sd": 81.5,
+    "Median": 84.6,
+    "plus_1_sd": 87.7,
+    "plus_2_sd": 90.8,
+    "plus_3_sd": 94.0
+  },
+  {
+    "umur_bulan": 23,
+    "minus_3_sd": 76.0,
+    "minus_2_sd": 79.2,
+    "minus_1_sd": 82.3,
+    "Median": 85.5,
+    "plus_1_sd": 88.7,
+    "plus_2_sd": 91.9,
+    "plus_3_sd": 95.0
+  },
+  {
+    "umur_bulan": 24,
+    "minus_3_sd": 76.0,
+    "minus_2_sd": 79.3,
+    "minus_1_sd": 82.5,
+    "Median": 85.7,
+    "plus_1_sd": 88.9,
+    "plus_2_sd": 92.2,
+    "plus_3_sd": 95.4
+  },
+  {
+    "umur_bulan": 25,
+    "minus_3_sd": 76.8,
+    "minus_2_sd": 80.0,
+    "minus_1_sd": 83.3,
+    "Median": 86.6,
+    "plus_1_sd": 89.9,
+    "plus_2_sd": 93.1,
+    "plus_3_sd": 96.4
+  },
+  {
+    "umur_bulan": 26,
+    "minus_3_sd": 77.5,
+    "minus_2_sd": 80.8,
+    "minus_1_sd": 84.1,
+    "Median": 87.4,
+    "plus_1_sd": 90.8,
+    "plus_2_sd": 94.1,
+    "plus_3_sd": 97.4
+  },
+  {
+    "umur_bulan": 27,
+    "minus_3_sd": 78.1,
+    "minus_2_sd": 81.5,
+    "minus_1_sd": 84.9,
+    "Median": 88.3,
+    "plus_1_sd": 91.7,
+    "plus_2_sd": 95.0,
+    "plus_3_sd": 98.4
+  },
+  {
+    "umur_bulan": 28,
+    "minus_3_sd": 78.8,
+    "minus_2_sd": 82.2,
+    "minus_1_sd": 85.7,
+    "Median": 89.1,
+    "plus_1_sd": 92.5,
+    "plus_2_sd": 96.0,
+    "plus_3_sd": 99.4
+  },
+  {
+    "umur_bulan": 29,
+    "minus_3_sd": 79.5,
+    "minus_2_sd": 82.9,
+    "minus_1_sd": 86.4,
+    "Median": 89.9,
+    "plus_1_sd": 93.4,
+    "plus_2_sd": 96.9,
+    "plus_3_sd": 100.3
+  },
+  {
+    "umur_bulan": 30,
+    "minus_3_sd": 80.1,
+    "minus_2_sd": 83.6,
+    "minus_1_sd": 87.1,
+    "Median": 90.7,
+    "plus_1_sd": 94.2,
+    "plus_2_sd": 97.7,
+    "plus_3_sd": 101.3
+  },
+  {
+    "umur_bulan": 31,
+    "minus_3_sd": 80.7,
+    "minus_2_sd": 84.3,
+    "minus_1_sd": 87.9,
+    "Median": 91.4,
+    "plus_1_sd": 95.0,
+    "plus_2_sd": 98.6,
+    "plus_3_sd": 102.2
+  },
+  {
+    "umur_bulan": 32,
+    "minus_3_sd": 81.3,
+    "minus_2_sd": 84.9,
+    "minus_1_sd": 88.6,
+    "Median": 92.2,
+    "plus_1_sd": 95.8,
+    "plus_2_sd": 99.4,
+    "plus_3_sd": 103.1
+  },
+  {
+    "umur_bulan": 33,
+    "minus_3_sd": 81.9,
+    "minus_2_sd": 85.6,
+    "minus_1_sd": 89.3,
+    "Median": 92.9,
+    "plus_1_sd": 96.6,
+    "plus_2_sd": 100.3,
+    "plus_3_sd": 103.9
+  },
+  {
+    "umur_bulan": 34,
+    "minus_3_sd": 82.5,
+    "minus_2_sd": 86.2,
+    "minus_1_sd": 89.9,
+    "Median": 93.6,
+    "plus_1_sd": 97.4,
+    "plus_2_sd": 101.1,
+    "plus_3_sd": 104.8
+  },
+  {
+    "umur_bulan": 35,
+    "minus_3_sd": 83.1,
+    "minus_2_sd": 86.8,
+    "minus_1_sd": 90.6,
+    "Median": 94.4,
+    "plus_1_sd": 98.1,
+    "plus_2_sd": 101.9,
+    "plus_3_sd": 105.6
+  },
+  {
+    "umur_bulan": 36,
+    "minus_3_sd": 83.6,
+    "minus_2_sd": 87.4,
+    "minus_1_sd": 91.2,
+    "Median": 95.1,
+    "plus_1_sd": 98.9,
+    "plus_2_sd": 102.7,
+    "plus_3_sd": 106.5
+  },
+  {
+    "umur_bulan": 37,
+    "minus_3_sd": 84.2,
+    "minus_2_sd": 88.0,
+    "minus_1_sd": 91.9,
+    "Median": 95.7,
+    "plus_1_sd": 99.6,
+    "plus_2_sd": 103.4,
+    "plus_3_sd": 107.3
+  },
+  {
+    "umur_bulan": 38,
+    "minus_3_sd": 84.7,
+    "minus_2_sd": 88.6,
+    "minus_1_sd": 92.5,
+    "Median": 96.4,
+    "plus_1_sd": 100.3,
+    "plus_2_sd": 104.2,
+    "plus_3_sd": 108.1
+  },
+  {
+    "umur_bulan": 39,
+    "minus_3_sd": 85.3,
+    "minus_2_sd": 89.2,
+    "minus_1_sd": 93.1,
+    "Median": 97.1,
+    "plus_1_sd": 101.0,
+    "plus_2_sd": 105.0,
+    "plus_3_sd": 108.9
+  },
+  {
+    "umur_bulan": 40,
+    "minus_3_sd": 85.8,
+    "minus_2_sd": 89.8,
+    "minus_1_sd": 93.8,
+    "Median": 97.7,
+    "plus_1_sd": 101.7,
+    "plus_2_sd": 105.7,
+    "plus_3_sd": 109.7
+  },
+  {
+    "umur_bulan": 41,
+    "minus_3_sd": 86.3,
+    "minus_2_sd": 90.4,
+    "minus_1_sd": 94.4,
+    "Median": 98.4,
+    "plus_1_sd": 102.4,
+    "plus_2_sd": 106.4,
+    "plus_3_sd": 110.5
+  },
+  {
+    "umur_bulan": 42,
+    "minus_3_sd": 86.8,
+    "minus_2_sd": 90.9,
+    "minus_1_sd": 95.0,
+    "Median": 99.0,
+    "plus_1_sd": 103.1,
+    "plus_2_sd": 107.2,
+    "plus_3_sd": 111.2
+  },
+  {
+    "umur_bulan": 43,
+    "minus_3_sd": 87.4,
+    "minus_2_sd": 91.5,
+    "minus_1_sd": 95.6,
+    "Median": 99.7,
+    "plus_1_sd": 103.8,
+    "plus_2_sd": 107.9,
+    "plus_3_sd": 112.0
+  },
+  {
+    "umur_bulan": 44,
+    "minus_3_sd": 87.9,
+    "minus_2_sd": 92.0,
+    "minus_1_sd": 96.2,
+    "Median": 100.3,
+    "plus_1_sd": 104.5,
+    "plus_2_sd": 108.6,
+    "plus_3_sd": 112.7
+  },
+  {
+    "umur_bulan": 45,
+    "minus_3_sd": 88.4,
+    "minus_2_sd": 92.5,
+    "minus_1_sd": 96.7,
+    "Median": 100.9,
+    "plus_1_sd": 105.1,
+    "plus_2_sd": 109.3,
+    "plus_3_sd": 113.5
+  },
+  {
+    "umur_bulan": 46,
+    "minus_3_sd": 88.9,
+    "minus_2_sd": 93.1,
+    "minus_1_sd": 97.3,
+    "Median": 101.5,
+    "plus_1_sd": 105.8,
+    "plus_2_sd": 110.0,
+    "plus_3_sd": 114.2
+  },
+  {
+    "umur_bulan": 47,
+    "minus_3_sd": 89.3,
+    "minus_2_sd": 93.6,
+    "minus_1_sd": 97.9,
+    "Median": 102.1,
+    "plus_1_sd": 106.4,
+    "plus_2_sd": 110.7,
+    "plus_3_sd": 114.9
+  },
+  {
+    "umur_bulan": 48,
+    "minus_3_sd": 89.8,
+    "minus_2_sd": 94.1,
+    "minus_1_sd": 98.4,
+    "Median": 102.7,
+    "plus_1_sd": 107.0,
+    "plus_2_sd": 111.3,
+    "plus_3_sd": 115.7
+  },
+  {
+    "umur_bulan": 49,
+    "minus_3_sd": 90.3,
+    "minus_2_sd": 94.6,
+    "minus_1_sd": 99.0,
+    "Median": 103.3,
+    "plus_1_sd": 107.7,
+    "plus_2_sd": 112.0,
+    "plus_3_sd": 116.4
+  },
+  {
+    "umur_bulan": 50,
+    "minus_3_sd": 90.7,
+    "minus_2_sd": 95.1,
+    "minus_1_sd": 99.5,
+    "Median": 103.9,
+    "plus_1_sd": 108.3,
+    "plus_2_sd": 112.7,
+    "plus_3_sd": 117.1
+  },
+  {
+    "umur_bulan": 51,
+    "minus_3_sd": 91.2,
+    "minus_2_sd": 95.6,
+    "minus_1_sd": 100.1,
+    "Median": 104.5,
+    "plus_1_sd": 108.9,
+    "plus_2_sd": 113.3,
+    "plus_3_sd": 117.7
+  },
+  {
+    "umur_bulan": 52,
+    "minus_3_sd": 91.7,
+    "minus_2_sd": 96.1,
+    "minus_1_sd": 100.6,
+    "Median": 105.0,
+    "plus_1_sd": 109.5,
+    "plus_2_sd": 114.0,
+    "plus_3_sd": 118.4
+  },
+  {
+    "umur_bulan": 53,
+    "minus_3_sd": 92.1,
+    "minus_2_sd": 96.6,
+    "minus_1_sd": 101.1,
+    "Median": 105.6,
+    "plus_1_sd": 110.1,
+    "plus_2_sd": 114.6,
+    "plus_3_sd": 119.1
+  },
+  {
+    "umur_bulan": 54,
+    "minus_3_sd": 92.6,
+    "minus_2_sd": 97.1,
+    "minus_1_sd": 101.6,
+    "Median": 106.2,
+    "plus_1_sd": 110.7,
+    "plus_2_sd": 115.2,
+    "plus_3_sd": 119.8
+  },
+  {
+    "umur_bulan": 55,
+    "minus_3_sd": 93.0,
+    "minus_2_sd": 97.6,
+    "minus_1_sd": 102.2,
+    "Median": 106.7,
+    "plus_1_sd": 111.3,
+    "plus_2_sd": 115.9
+  },
+  {
+    "umur_bulan": 56,
+    "minus_3_sd": 93.4,
+    "minus_2_sd": 98.1,
+    "minus_1_sd": 102.7,
+    "Median": 107.3,
+    "plus_1_sd": 111.9,
+    "plus_2_sd": 116.5,
+    "plus_3_sd": 121.1
+  },
+  {
+    "umur_bulan": 57,
+    "minus_3_sd": 93.9,
+    "minus_2_sd": 98.5,
+    "minus_1_sd": 103.2,
+    "Median": 107.8,
+    "plus_1_sd": 112.5,
+    "plus_2_sd": 117.1,
+    "plus_3_sd": 121.8
+  },
+  {
+    "umur_bulan": 58,
+    "minus_3_sd": 94.3,
+    "minus_2_sd": 99.0,
+    "minus_1_sd": 103.7,
+    "Median": 108.4,
+    "plus_1_sd": 113.0,
+    "plus_2_sd": 117.7,
+    "plus_3_sd": 122.4
+  },
+  {
+    "umur_bulan": 59,
+    "minus_3_sd": 94.7,
+    "minus_2_sd": 99.5,
+    "minus_1_sd": 104.2,
+    "Median": 108.9,
+    "plus_1_sd": 113.6,
+    "plus_2_sd": 118.3,
+    "plus_3_sd": 123.1
+  },
+  {
+    "umur_bulan": 60,
+    "minus_3_sd": 95.2,
+    "minus_2_sd": 99.9,
+    "minus_1_sd": 104.7,
+    "Median": 109.4,
+    "plus_1_sd": 114.2,
+    "plus_2_sd": 118.9,
+    "plus_3_sd": 123.7
+  }
+]

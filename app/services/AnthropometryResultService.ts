@@ -28,7 +28,7 @@ export class AnthropometryResultService {
         return this.anthropometryResultRepository.findById(id);
     }
 
-    public async findDataByAnthropometryId(userId: number): Promise<AnthropometryResultType[] | undefined> {
-        return this.anthropometryResultRepository.findByAnthropometryId(userId);
+    public async findDataByAnthropometryId(dataId: number): Promise<AnthropometryResultType[] | undefined> {
+        return this.anthropometryResultRepository.findByAnthropometryId(dataId);
     }
 }

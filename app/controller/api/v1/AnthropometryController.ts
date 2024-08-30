@@ -82,15 +82,6 @@ export class AnthropometryController {
         try {
             const userId = req.user?.id;
 
-            if (!userId) {
-                return res.status(400).json({
-                    status: "Failed",
-                    message: "User does not exist"
-                });
-            }
-
-            console.log("user id: ", userId);
-
             const datas = await anthropometryService.findDataByUserId(userId);
             
             return res.status(200).json({
@@ -180,4 +171,99 @@ export class AnthropometryController {
             return res.status(500).json({ status: "Failed", message: "Internal server error" })
         }
     }
+
+    public static async anthropometryResultById(req: Request, res: Response): Promise<Response> {
+    const fs = require('fs').promises;
+    const path = require('path');
+
+    try {
+        const { id } = req.params;
+        const dataId = parseInt(id);
+
+        const data = await anthropometryResultService.findDataById(dataId);
+
+        if (!data) {
+            return res.status(404).json({
+                status: "Failed",
+                message: "Data not found"
+            });
+        }
+
+        const anthropometryData = await anthropometryService.findDataById(data.anthropometry_id);
+
+        if (!anthropometryData) {
+            return res.status(404).json({
+                status: "Failed",
+                message: "Anthropometry data not found"
+            });
+        }
+
+        // Calculate age
+        const measurementDate = new Date(anthropometryData.measurement_date);
+        const birthDate = new Date(anthropometryData.birth_date);
+        const ageInMilliseconds = measurementDate.getTime() - birthDate.getTime();
+        const ageInYears = ageInMilliseconds / (1000 * 60 * 60 * 24 * 365.25);
+        const ageInMonths = Math.round(ageInMilliseconds / (1000 * 60 * 60 * 24 * 30.44));
+
+        const gender = anthropometryData.gender === "male" ? 'male' : 'female';
+
+        const fileBbU = `database/datas/${gender}/data-bb-u.json`;
+        const fileTbU = `database/datas/${gender}/data-tb-u.json`;
+        const fileImtU = `database/datas/${gender}/data-imt-u.json`;
+
+        const fileBbUPath = path.join(fileBbU);
+        const fileTbUPath = path.join(fileTbU);
+        const fileImtUPath = path.join(fileImtU);
+
+        const dataBbuJson = await fs.readFile(fileBbUPath, 'utf8');
+        const jsonBbuData = JSON.parse(dataBbuJson);
+        
+        const dataTbuJson = await fs.readFile(fileTbUPath, 'utf8');
+        const jsonTbuData = JSON.parse(dataTbuJson);
+
+        const dataImtUJson = await fs.readFile(fileImtUPath, 'utf8');
+        const jsonImtuData = JSON.parse(dataImtUJson);
+
+        const dataBbU = jsonBbuData.filter((item: { umur_bulan: number }) => {
+            return item.umur_bulan == ageInMonths;
+        });
+        
+        const dataTbU = jsonTbuData.filter((item: { umur_bulan: number }) => {
+            return item.umur_bulan == ageInMonths;
+        });
+
+        const dataImtU = jsonImtuData.filter((item: { umur_bulan: number }) => {
+            return item.umur_bulan == ageInMonths;
+        });
+        
+        return res.status(200).json({
+            status: "Success",
+            message: "Data successfully retrieved",
+            data: {
+                name: anthropometryData.name,
+                weight: Math.round(anthropometryData.weight),
+                height: Math.round(anthropometryData.height),
+                age: Math.round(ageInYears), // Format age to 2 decimal places
+                bb_u: data.bb_u,
+                tb_u: data.tb_u,
+                bb_tb: data.bb_tb,
+                imt_u: data.imt_u,
+                lk_u: data.lk_u,
+                lla_u: data.lla_u,
+                data_bb_u: dataBbU[0],
+                data_tb_u: dataTbU[0],
+                data_imt_u: dataImtU[0]
+            }
+        });
+
+    } catch (error) {
+        console.error("Internal Error", error);
+        return res.status(500).json({
+            status: "Failed",
+            message: "Internal server error",
+            error: error
+        });
+    }
+    }
+
 }

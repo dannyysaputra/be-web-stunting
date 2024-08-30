@@ -1,0 +1,622 @@
+[
+  {
+    "umur_bulan": 0,
+    "minus_3_sd": 10.1,
+    "minus_2_sd": 11.1,
+    "minus_1_sd": 12.2,
+    "median": 13.3,
+    "plus_1_sd": 14.6,
+    "plus_2_sd": 16.1,
+    "plus_3_sd": 17.7
+  },
+  {
+    "umur_bulan": 1,
+    "minus_3_sd": 10.8,
+    "minus_2_sd": 12.0,
+    "minus_1_sd": 13.2,
+    "median": 14.6,
+    "plus_1_sd": 16.0,
+    "plus_2_sd": 17.5,
+    "plus_3_sd": 19.1
+  },
+  {
+    "umur_bulan": 2,
+    "minus_3_sd": 11.8,
+    "minus_2_sd": 13.0,
+    "minus_1_sd": 14.3,
+    "median": 15.8,
+    "plus_1_sd": 17.3,
+    "plus_2_sd": 19.0,
+    "plus_3_sd": 20.7
+  },
+  {
+    "umur_bulan": 3,
+    "minus_3_sd": 12.4,
+    "minus_2_sd": 13.6,
+    "minus_1_sd": 14.9,
+    "median": 16.4,
+    "plus_1_sd": 17.9,
+    "plus_2_sd": 19.7,
+    "plus_3_sd": 21.5
+  },
+  {
+    "umur_bulan": 4,
+    "minus_3_sd": 12.7,
+    "minus_2_sd": 13.9,
+    "minus_1_sd": 15.2,
+    "median": 16.7,
+    "plus_1_sd": 18.3,
+    "plus_2_sd": 20.0,
+    "plus_3_sd": 22.0
+  },
+  {
+    "umur_bulan": 5,
+    "minus_3_sd": 12.9,
+    "minus_2_sd": 14.1,
+    "minus_1_sd": 15.4,
+    "median": 16.8,
+    "plus_1_sd": 18.4,
+    "plus_2_sd": 20.2,
+    "plus_3_sd": 22.2
+  },
+  {
+    "umur_bulan": 6,
+    "minus_3_sd": 13.0,
+    "minus_2_sd": 14.1,
+    "minus_1_sd": 15.5,
+    "median": 16.9,
+    "plus_1_sd": 18.5,
+    "plus_2_sd": 20.3,
+    "plus_3_sd": 22.3
+  },
+  {
+    "umur_bulan": 7,
+    "minus_3_sd": 13.0,
+    "minus_2_sd": 14.2,
+    "minus_1_sd": 15.5,
+    "median": 16.9,
+    "plus_1_sd": 18.5,
+    "plus_2_sd": 20.3,
+    "plus_3_sd": 22.3
+  },
+  {
+    "umur_bulan": 8,
+    "minus_3_sd": 13.0,
+    "minus_2_sd": 14.1,
+    "minus_1_sd": 15.4,
+    "median": 16.8,
+    "plus_1_sd": 18.4,
+    "plus_2_sd": 20.2,
+    "plus_3_sd": 22.2
+  },
+  {
+    "umur_bulan": 9,
+    "minus_3_sd": 12.9,
+    "minus_2_sd": 14.1,
+    "minus_1_sd": 15.3,
+    "median": 16.7,
+    "plus_1_sd": 18.3,
+    "plus_2_sd": 20.1,
+    "plus_3_sd": 22.1
+  },
+  {
+    "umur_bulan": 10,
+    "minus_3_sd": 12.9,
+    "minus_2_sd": 14.0,
+    "minus_1_sd": 15.2,
+    "median": 16.6,
+    "plus_1_sd": 18.2,
+    "plus_2_sd": 19.9,
+    "plus_3_sd": 21.9
+  },
+  {
+    "umur_bulan": 11,
+    "minus_3_sd": 12.8,
+    "minus_2_sd": 13.9,
+    "minus_1_sd": 15.1,
+    "median": 16.5,
+    "plus_1_sd": 18.0,
+    "plus_2_sd": 19.8,
+    "plus_3_sd": 21.8
+  },
+  {
+    "umur_bulan": 12,
+    "minus_3_sd": 12.7,
+    "minus_2_sd": 13.8,
+    "minus_1_sd": 15.0,
+    "median": 16.4,
+    "plus_1_sd": 17.9,
+    "plus_2_sd": 19.6,
+    "plus_3_sd": 21.6
+  },
+  {
+    "umur_bulan": 13,
+    "minus_3_sd": 12.6,
+    "minus_2_sd": 13.7,
+    "minus_1_sd": 14.9,
+    "median": 16.2,
+    "plus_1_sd": 17.7,
+    "plus_2_sd": 19.5,
+    "plus_3_sd": 21.4
+  },
+  {
+    "umur_bulan": 14,
+    "minus_3_sd": 12.6,
+    "minus_2_sd": 13.6,
+    "minus_1_sd": 14.8,
+    "median": 16.1,
+    "plus_1_sd": 17.6,
+    "plus_2_sd": 19.3,
+    "plus_3_sd": 21.3
+  },
+  {
+    "umur_bulan": 15,
+    "minus_3_sd": 12.5,
+    "minus_2_sd": 13.5,
+    "minus_1_sd": 14.7,
+    "median": 16.0,
+    "plus_1_sd": 17.5,
+    "plus_2_sd": 19.2,
+    "plus_3_sd": 21.1
+  },
+  {
+    "umur_bulan": 16,
+    "minus_3_sd": 12.4,
+    "minus_2_sd": 13.5,
+    "minus_1_sd": 14.6,
+    "median": 15.9,
+    "plus_1_sd": 17.4,
+    "plus_2_sd": 19.1,
+    "plus_3_sd": 21.0
+  },
+  {
+    "umur_bulan": 17,
+    "minus_3_sd": 12.4,
+    "minus_2_sd": 13.4,
+    "minus_1_sd": 14.5,
+    "median": 15.8,
+    "plus_1_sd": 17.3,
+    "plus_2_sd": 18.9,
+    "plus_3_sd": 20.9
+  },
+  {
+    "umur_bulan": 18,
+    "minus_3_sd": 12.3,
+    "minus_2_sd": 13.3,
+    "minus_1_sd": 14.4,
+    "median": 15.7,
+    "plus_1_sd": 17.2,
+    "plus_2_sd": 18.8,
+    "plus_3_sd": 20.8
+  },
+  {
+    "umur_bulan": 19,
+    "minus_3_sd": 12.3,
+    "minus_2_sd": 13.3,
+    "minus_1_sd": 14.4,
+    "median": 15.7,
+    "plus_1_sd": 17.1,
+    "plus_2_sd": 18.8,
+    "plus_3_sd": 20.7
+  },
+  {
+    "umur_bulan": 20,
+    "minus_3_sd": 12.2,
+    "minus_2_sd": 13.2,
+    "minus_1_sd": 14.3,
+    "median": 15.6,
+    "plus_1_sd": 17.0,
+    "plus_2_sd": 18.7,
+    "plus_3_sd": 20.6
+  },
+  {
+    "umur_bulan": 21,
+    "minus_3_sd": 12.2,
+    "minus_2_sd": 13.2,
+    "minus_1_sd": 14.3,
+    "median": 15.5,
+    "plus_1_sd": 17.0,
+    "plus_2_sd": 18.6,
+    "plus_3_sd": 20.5
+  },
+  {
+    "umur_bulan": 22,
+    "minus_3_sd": 12.2,
+    "minus_2_sd": 13.1,
+    "minus_1_sd": 14.2,
+    "median": 15.5,
+    "plus_1_sd": 16.9,
+    "plus_2_sd": 18.5,
+    "plus_3_sd": 20.4
+  },
+  {
+    "umur_bulan": 23,
+    "minus_3_sd": 12.2,
+    "minus_2_sd": 13.1,
+    "minus_1_sd": 14.2,
+    "median": 15.4,
+    "plus_1_sd": 16.9,
+    "plus_2_sd": 18.5,
+    "plus_3_sd": 20.4
+  },
+  {
+    "umur_bulan": 24,
+    "minus_3_sd": 12.1,
+    "minus_2_sd": 13.1,
+    "minus_1_sd": 14.2,
+    "median": 15.4,
+    "plus_1_sd": 16.8,
+    "plus_2_sd": 18.4,
+    "plus_3_sd": 20.3
+  },
+  {
+    "umur_bulan": 24,
+    "minus_3_sd": 12.4,
+    "minus_2_sd": 13.3,
+    "minus_1_sd": 14.4,
+    "median": 15.7,
+    "plus_1_sd": 17.1,
+    "plus_2_sd": 18.7,
+    "plus_3_sd": 20.6
+  },
+  {
+    "umur_bulan": 25,
+    "minus_3_sd": 12.4,
+    "minus_2_sd": 13.3,
+    "minus_1_sd": 14.4,
+    "median": 15.7,
+    "plus_1_sd": 17.1,
+    "plus_2_sd": 18.7,
+    "plus_3_sd": 20.6
+  },
+  {
+    "umur_bulan": 26,
+    "minus_3_sd": 12.3,
+    "minus_2_sd": 13.3,
+    "minus_1_sd": 14.4,
+    "median": 15.6,
+    "plus_1_sd": 17.0,
+    "plus_2_sd": 18.7,
+    "plus_3_sd": 20.6
+  },
+  {
+    "umur_bulan": 27,
+    "minus_3_sd": 12.3,
+    "minus_2_sd": 13.3,
+    "minus_1_sd": 14.4,
+    "median": 15.6,
+    "plus_1_sd": 17.0,
+    "plus_2_sd": 18.6,
+    "plus_3_sd": 20.5
+  },
+  {
+    "umur_bulan": 28,
+    "minus_3_sd": 12.3,
+    "minus_2_sd": 13.3,
+    "minus_1_sd": 14.3,
+    "median": 15.6,
+    "plus_1_sd": 17.0,
+    "plus_2_sd": 18.6,
+    "plus_3_sd": 20.5
+  },
+  {
+    "umur_bulan": 29,
+    "minus_3_sd": 12.3,
+    "minus_2_sd": 13.2,
+    "minus_1_sd": 14.3,
+    "median": 15.6,
+    "plus_1_sd": 17.0,
+    "plus_2_sd": 18.6,
+    "plus_3_sd": 20.4
+  },
+  {
+    "umur_bulan": 30,
+    "minus_3_sd": 12.3,
+    "minus_2_sd": 13.2,
+    "minus_1_sd": 14.3,
+    "median": 15.5,
+    "plus_1_sd": 16.9,
+    "plus_2_sd": 18.5,
+    "plus_3_sd": 20.4
+  },
+  {
+    "umur_bulan": 31,
+    "minus_3_sd": 12.2,
+    "minus_2_sd": 13.2,
+    "minus_1_sd": 14.3,
+    "median": 15.5,
+    "plus_1_sd": 16.9,
+    "plus_2_sd": 18.5,
+    "plus_3_sd": 20.4
+  },
+  {
+    "umur_bulan": 32,
+    "minus_3_sd": 12.2,
+    "minus_2_sd": 13.2,
+    "minus_1_sd": 14.3,
+    "median": 15.5,
+    "plus_1_sd": 16.9,
+    "plus_2_sd": 18.5,
+    "plus_3_sd": 20.4
+  },
+  {
+    "umur_bulan": 33,
+    "minus_3_sd": 12.2,
+    "minus_2_sd": 13.1,
+    "minus_1_sd": 14.2,
+    "median": 15.5,
+    "plus_1_sd": 16.9,
+    "plus_2_sd": 18.5,
+    "plus_3_sd": 20.3
+  },
+  {
+    "umur_bulan": 34,
+    "minus_3_sd": 12.2,
+    "minus_2_sd": 13.1,
+    "minus_1_sd": 14.2,
+    "median": 15.4,
+    "plus_1_sd": 16.8,
+    "plus_2_sd": 18.5,
+    "plus_3_sd": 20.3
+  },
+  {
+    "umur_bulan": 35,
+    "minus_3_sd": 12.1,
+    "minus_2_sd": 13.1,
+    "minus_1_sd": 14.2,
+    "median": 15.4,
+    "plus_1_sd": 16.8,
+    "plus_2_sd": 18.4,
+    "plus_3_sd": 20.3
+  },
+  {
+    "umur_bulan": 36,
+    "minus_3_sd": 12.1,
+    "minus_2_sd": 13.1,
+    "minus_1_sd": 14.2,
+    "median": 15.4,
+    "plus_1_sd": 16.8,
+    "plus_2_sd": 18.4,
+    "plus_3_sd": 20.3
+  },
+  {
+    "umur_bulan": 37,
+    "minus_3_sd": 12.1,
+    "minus_2_sd": 13.1,
+    "minus_1_sd": 14.1,
+    "median": 15.4,
+    "plus_1_sd": 16.8,
+    "plus_2_sd": 18.4,
+    "plus_3_sd": 20.3
+  },
+  {
+    "umur_bulan": 38,
+    "minus_3_sd": 12.1,
+    "minus_2_sd": 13.0,
+    "minus_1_sd": 14.1,
+    "median": 15.4,
+    "plus_1_sd": 16.8,
+    "plus_2_sd": 18.4,
+    "plus_3_sd": 20.3
+  },
+  {
+    "umur_bulan": 39,
+    "minus_3_sd": 12.0,
+    "minus_2_sd": 13.0,
+    "minus_1_sd": 14.1,
+    "median": 15.3,
+    "plus_1_sd": 16.8,
+    "plus_2_sd": 18.4,
+    "plus_3_sd": 20.3
+  },
+  {
+    "umur_bulan": 40,
+    "minus_3_sd": 12.0,
+    "minus_2_sd": 13.0,
+    "minus_1_sd": 14.1,
+    "median": 15.3,
+    "plus_1_sd": 16.8,
+    "plus_2_sd": 18.4,
+    "plus_3_sd": 20.3
+  },
+  {
+    "umur_bulan": 41,
+    "minus_3_sd": 12.0,
+    "minus_2_sd": 13.0,
+    "minus_1_sd": 14.1,
+    "median": 15.3,
+    "plus_1_sd": 16.8,
+    "plus_2_sd": 18.4,
+    "plus_3_sd": 20.4
+  },
+  {
+    "umur_bulan": 42,
+    "minus_3_sd": 12.0,
+    "minus_2_sd": 12.9,
+    "minus_1_sd": 14.0,
+    "median": 15.3,
+    "plus_1_sd": 16.8,
+    "plus_2_sd": 18.4,
+    "plus_3_sd": 20.4
+  },
+  {
+    "umur_bulan": 43,
+    "minus_3_sd": 11.9,
+    "minus_2_sd": 12.9,
+    "minus_1_sd": 14.0,
+    "median": 15.3,
+    "plus_1_sd": 16.8,
+    "plus_2_sd": 18.4,
+    "plus_3_sd": 20.4
+  },
+  {
+    "umur_bulan": 44,
+    "minus_3_sd": 11.9,
+    "minus_2_sd": 12.9,
+    "minus_1_sd": 14.0,
+    "median": 15.3,
+    "plus_1_sd": 16.8,
+    "plus_2_sd": 18.5,
+    "plus_3_sd": 20.4
+  },
+  {
+    "umur_bulan": 45,
+    "minus_3_sd": 11.9,
+    "minus_2_sd": 12.9,
+    "minus_1_sd": 14.0,
+    "median": 15.3,
+    "plus_1_sd": 16.8,
+    "plus_2_sd": 18.5,
+    "plus_3_sd": 20.5
+  },
+  {
+    "umur_bulan": 46,
+    "minus_3_sd": 11.9,
+    "minus_2_sd": 12.9,
+    "minus_1_sd": 14.0,
+    "median": 15.3,
+    "plus_1_sd": 16.8,
+    "plus_2_sd": 18.5,
+    "plus_3_sd": 20.5
+  },
+  {
+    "umur_bulan": 47,
+    "minus_3_sd": 11.8,
+    "minus_2_sd": 12.8,
+    "minus_1_sd": 14.0,
+    "median": 15.3,
+    "plus_1_sd": 16.8,
+    "plus_2_sd": 18.5,
+    "plus_3_sd": 20.5
+  },
+  {
+    "umur_bulan": 48,
+    "minus_3_sd": 11.8,
+    "minus_2_sd": 12.8,
+    "minus_1_sd": 14.0,
+    "median": 15.3,
+    "plus_1_sd": 16.8,
+    "plus_2_sd": 18.5,
+    "plus_3_sd": 20.6
+  },
+  {
+    "umur_bulan": 49,
+    "minus_3_sd": 11.8,
+    "minus_2_sd": 12.8,
+    "minus_1_sd": 13.9,
+    "median": 15.3,
+    "plus_1_sd": 16.8,
+    "plus_2_sd": 18.5,
+    "plus_3_sd": 20.6
+  },
+  {
+    "umur_bulan": 50,
+    "minus_3_sd": 11.8,
+    "minus_2_sd": 12.8,
+    "minus_1_sd": 13.9,
+    "median": 15.3,
+    "plus_1_sd": 16.8,
+    "plus_2_sd": 18.6,
+    "plus_3_sd": 20.7
+  },
+  {
+    "umur_bulan": 51,
+    "minus_3_sd": 11.8,
+    "minus_2_sd": 12.8,
+    "minus_1_sd": 13.9,
+    "median": 15.3,
+    "plus_1_sd": 16.8,
+    "plus_2_sd": 18.6,
+    "plus_3_sd": 20.7
+  },
+  {
+    "umur_bulan": 52,
+    "minus_3_sd": 11.7,
+    "minus_2_sd": 12.8,
+    "minus_1_sd": 13.9,
+    "median": 15.2,
+    "plus_1_sd": 16.8,
+    "plus_2_sd": 18.6,
+    "plus_3_sd": 20.7
+  },
+  {
+    "umur_bulan": 53,
+    "minus_3_sd": 11.7,
+    "minus_2_sd": 12.7,
+    "minus_1_sd": 13.9,
+    "median": 15.3,
+    "plus_1_sd": 16.8,
+    "plus_2_sd": 18.6,
+    "plus_3_sd": 20.8
+  },
+  {
+    "umur_bulan": 54,
+    "minus_3_sd": 11.7,
+    "minus_2_sd": 12.7,
+    "minus_1_sd": 13.9,
+    "median": 15.3,
+    "plus_1_sd": 16.8,
+    "plus_2_sd": 18.7,
+    "plus_3_sd": 20.8
+  },
+  {
+    "umur_bulan": 55,
+    "minus_3_sd": 11.7,
+    "minus_2_sd": 12.7,
+    "minus_1_sd": 13.9,
+    "median": 15.3,
+    "plus_1_sd": 16.8,
+    "plus_2_sd": 18.7,
+    "plus_3_sd": 20.9
+  },
+  {
+    "umur_bulan": 56,
+    "minus_3_sd": 11.7,
+    "minus_2_sd": 12.7,
+    "minus_1_sd": 13.9,
+    "median": 15.3,
+    "plus_1_sd": 16.8,
+    "plus_2_sd": 18.7,
+    "plus_3_sd": 20.9
+  },
+  {
+    "umur_bulan": 57,
+    "minus_3_sd": 11.7,
+    "minus_2_sd": 12.7,
+    "minus_1_sd": 13.9,
+    "median": 15.3,
+    "plus_1_sd": 16.9,
+    "plus_2_sd": 18.7,
+    "plus_3_sd": 21.0
+  },
+  {
+    "umur_bulan": 58,
+    "minus_3_sd": 11.7,
+    "minus_2_sd": 12.7,
+    "minus_1_sd": 13.9,
+    "median": 15.3,
+    "plus_1_sd": 16.9,
+    "plus_2_sd": 18.8,
+    "plus_3_sd": 21.0
+  },
+  {
+    "umur_bulan": 59,
+    "minus_3_sd": 11.6,
+    "minus_2_sd": 12.7,
+    "minus_1_sd": 13.9,
+    "median": 15.3,
+    "plus_1_sd": 16.9,
+    "plus_2_sd": 18.8,
+    "plus_3_sd": 21.0
+  },
+  {
+    "umur_bulan": 60,
+    "minus_3_sd": 11.6,
+    "minus_2_sd": 12.7,
+    "minus_1_sd": 13.9,
+    "median": 15.3,
+    "plus_1_sd": 16.9,
+    "plus_2_sd": 18.8,
+    "plus_3_sd": 21.1
+  }
+]
