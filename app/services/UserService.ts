@@ -1,3 +1,5 @@
+import jwt from 'jsonwebtoken';
+
 import { UserRepository } from "../repositories/UserRepository";
 import { UserType } from "../models/UserModel";
 import { encryptPassword, checkPassword, createToken } from "../utils/encrypt";
@@ -40,15 +42,28 @@ export class UserService {
     public async verifyPassword(storedPassword: string, providedPassword: string): Promise<boolean> {
         return await checkPassword(storedPassword, providedPassword);
       }
+
+
+    public async verifyToken(token: string): Promise<any> {
+        try {
+            // Replace 'RAHASIA123321' with the secret used in createToken
+            const decoded = jwt.verify(token, 'RAHASIA123321');
+            return decoded;
+        } catch (error) {
+            console.error('Token verification failed:', error);
+            return null; // Return null if the token is invalid or expired
+        }
+    }
+
     
     public async generateToken(user: UserType): Promise<string> {
-    return await createToken({
-        id: user.id,
-        email: user.email,
-        role: user.role_id,
-        createdAt: user.created_at,
-        updatedAt: user.updated_at
-    });
+        return await createToken({
+            id: user.id,
+            email: user.email,
+            role: user.role_id,
+            createdAt: user.created_at,
+            updatedAt: user.updated_at
+        });
     }
 
     public async googleId(user: UserType, googleId: string): Promise<void> {
