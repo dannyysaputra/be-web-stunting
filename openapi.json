@@ -715,6 +715,297 @@
           }
         }
       }
+    },
+    "/anthropometry/result/{id}": {
+      "get": {
+        "summary": "Retrieve anthropometry result by ID",
+        "tags": ["Anthropometry"],
+        "description": "Gets the anthropometry result for a given ID, including calculations and data retrieval from JSON files.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            },
+            "description": "ID of the anthropometry result to retrieve."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with anthropometry data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "Success"
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Data successfully retrieved"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "type": "string",
+                          "example": "Sofia"
+                        },
+                        "weight": {
+                          "type": "integer",
+                          "example": 13
+                        },
+                        "height": {
+                          "type": "integer",
+                          "example": 85
+                        },
+                        "age": {
+                          "type": "integer",
+                          "example": 5
+                        },
+                        "bb_u": {
+                          "type": "number",
+                          "format": "float",
+                          "example": 2.71208
+                        },
+                        "tb_u": {
+                          "type": "number",
+                          "format": "float",
+                          "example": 18.5073
+                        },
+                        "bb_tb": {
+                          "type": "number",
+                          "format": "float",
+                          "example": 0.146542
+                        },
+                        "imt_u": {
+                          "type": "number",
+                          "format": "float",
+                          "example": 0.00171796
+                        },
+                        "lk_u": {
+                          "type": "number",
+                          "format": "float",
+                          "example": 9.89368
+                        },
+                        "lla_u": {
+                          "type": "number",
+                          "format": "float",
+                          "example": 3.29789
+                        },
+                        "data_bb_u": {
+                          "type": "object",
+                          "properties": {
+                            "umur_bulan": {
+                              "type": "integer",
+                              "example": 55
+                            },
+                            "minus_3_sd": {
+                              "type": "number",
+                              "format": "float",
+                              "example": 11.6
+                            },
+                            "minus_2_sd": {
+                              "type": "number",
+                              "format": "float",
+                              "example": 13.2
+                            },
+                            "minus_1_sd": {
+                              "type": "number",
+                              "format": "float",
+                              "example": 15.1
+                            },
+                            "median": {
+                              "type": "number",
+                              "format": "float",
+                              "example": 17.3
+                            },
+                            "plus_1_sd": {
+                              "type": "number",
+                              "format": "float",
+                              "example": 20.1
+                            },
+                            "plus_2_sd": {
+                              "type": "number",
+                              "format": "float",
+                              "example": 23.5
+                            },
+                            "plus_3_sd": {
+                              "type": "number",
+                              "format": "float",
+                              "example": 27.7
+                            }
+                          }
+                        },
+                        "data_tb_u": {
+                          "type": "object",
+                          "properties": {
+                            "umur_bulan": {
+                              "type": "integer",
+                              "example": 55
+                            },
+                            "minus_3_sd": {
+                              "type": "number",
+                              "format": "float",
+                              "example": 11.6
+                            },
+                            "minus_2_sd": {
+                              "type": "number",
+                              "format": "float",
+                              "example": 13.2
+                            },
+                            "minus_1_sd": {
+                              "type": "number",
+                              "format": "float",
+                              "example": 15.1
+                            },
+                            "median": {
+                              "type": "number",
+                              "format": "float",
+                              "example": 17.3
+                            },
+                            "plus_1_sd": {
+                              "type": "number",
+                              "format": "float",
+                              "example": 20.1
+                            },
+                            "plus_2_sd": {
+                              "type": "number",
+                              "format": "float",
+                              "example": 23.5
+                            },
+                            "plus_3_sd": {
+                              "type": "number",
+                              "format": "float",
+                              "example": 27.7
+                            }
+                          }
+                        },
+                        "data_imt_u": {
+                          "type": "object",
+                          "properties": {
+                            "umur_bulan": {
+                              "type": "integer",
+                              "example": 55
+                            },
+                            "minus_3_sd": {
+                              "type": "number",
+                              "format": "float",
+                              "example": 11.6
+                            },
+                            "minus_2_sd": {
+                              "type": "number",
+                              "format": "float",
+                              "example": 13.2
+                            },
+                            "minus_1_sd": {
+                              "type": "number",
+                              "format": "float",
+                              "example": 15.1
+                            },
+                            "median": {
+                              "type": "number",
+                              "format": "float",
+                              "example": 17.3
+                            },
+                            "plus_1_sd": {
+                              "type": "number",
+                              "format": "float",
+                              "example": 20.1
+                            },
+                            "plus_2_sd": {
+                              "type": "number",
+                              "format": "float",
+                              "example": 23.5
+                            },
+                            "plus_3_sd": {
+                              "type": "number",
+                              "format": "float",
+                              "example": 27.7
+                            }
+                          }
+                        },
+                        "data_gizi": {
+                          "type": "object",
+                          "properties": {
+                            "gizi_buruk": {
+                              "type": "integer",
+                              "example": 0
+                            },
+                            "gizi_kurang": {
+                              "type": "number",
+                              "format": "integer",
+                              "example": 0
+                            },
+                            "gizi_baik": {
+                              "type": "number",
+                              "format": "integer",
+                              "example": 0
+                            },
+                            "gizi_lebih": {
+                              "type": "number",
+                              "format": "integer",
+                              "example": 100
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Data not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "Failed"
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Data not found"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "Failed"
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Internal server error"
+                    },
+                    "error": {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
