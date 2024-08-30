@@ -929,6 +929,30 @@
                               "example": 27.7
                             }
                           }
+                        },
+                        "data_gizi": {
+                          "type": "object",
+                          "properties": {
+                            "gizi_buruk": {
+                              "type": "integer",
+                              "example": 0
+                            },
+                            "gizi_kurang": {
+                              "type": "number",
+                              "format": "integer",
+                              "example": 0
+                            },
+                            "gizi_baik": {
+                              "type": "number",
+                              "format": "integer",
+                              "example": 0
+                            },
+                            "gizi_lebih": {
+                              "type": "number",
+                              "format": "integer",
+                              "example": 100
+                            }
+                          }
                         }
                       }
                     }

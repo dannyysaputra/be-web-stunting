@@ -6,6 +6,14 @@ import { AnthropometryType } from "../../../models/AnthropometryModel";
 const anthropometryService = new AnthropometryService();
 const anthropometryResultService = new AnthropometryResultService();
 
+type CategoryCounts = {
+    [key: string]: number;
+    'Gizi Buruk': number;
+    'Gizi Kurang': number;
+    'Gizi Baik': number;
+    'Gizi Lebih': number;
+};
+
 export class AnthropometryController {
     public static async create(req: Request, res: Response): Promise<Response> {
         try {
@@ -173,97 +181,139 @@ export class AnthropometryController {
     }
 
     public static async anthropometryResultById(req: Request, res: Response): Promise<Response> {
-    const fs = require('fs').promises;
-    const path = require('path');
+        const fs = require('fs').promises;
+        const path = require('path');
 
-    try {
-        const { id } = req.params;
-        const dataId = parseInt(id);
+        try {
+            const { id } = req.params;
+            const dataId = parseInt(id);
 
-        const data = await anthropometryResultService.findDataById(dataId);
+            const data = await anthropometryResultService.findDataById(dataId);
 
-        if (!data) {
-            return res.status(404).json({
-                status: "Failed",
-                message: "Data not found"
-            });
-        }
-
-        const anthropometryData = await anthropometryService.findDataById(data.anthropometry_id);
-
-        if (!anthropometryData) {
-            return res.status(404).json({
-                status: "Failed",
-                message: "Anthropometry data not found"
-            });
-        }
-
-        // Calculate age
-        const measurementDate = new Date(anthropometryData.measurement_date);
-        const birthDate = new Date(anthropometryData.birth_date);
-        const ageInMilliseconds = measurementDate.getTime() - birthDate.getTime();
-        const ageInYears = ageInMilliseconds / (1000 * 60 * 60 * 24 * 365.25);
-        const ageInMonths = Math.round(ageInMilliseconds / (1000 * 60 * 60 * 24 * 30.44));
-
-        const gender = anthropometryData.gender === "male" ? 'male' : 'female';
-
-        const fileBbU = `database/datas/${gender}/data-bb-u.json`;
-        const fileTbU = `database/datas/${gender}/data-tb-u.json`;
-        const fileImtU = `database/datas/${gender}/data-imt-u.json`;
-
-        const fileBbUPath = path.join(fileBbU);
-        const fileTbUPath = path.join(fileTbU);
-        const fileImtUPath = path.join(fileImtU);
-
-        const dataBbuJson = await fs.readFile(fileBbUPath, 'utf8');
-        const jsonBbuData = JSON.parse(dataBbuJson);
-        
-        const dataTbuJson = await fs.readFile(fileTbUPath, 'utf8');
-        const jsonTbuData = JSON.parse(dataTbuJson);
-
-        const dataImtUJson = await fs.readFile(fileImtUPath, 'utf8');
-        const jsonImtuData = JSON.parse(dataImtUJson);
-
-        const dataBbU = jsonBbuData.filter((item: { umur_bulan: number }) => {
-            return item.umur_bulan == ageInMonths;
-        });
-        
-        const dataTbU = jsonTbuData.filter((item: { umur_bulan: number }) => {
-            return item.umur_bulan == ageInMonths;
-        });
-
-        const dataImtU = jsonImtuData.filter((item: { umur_bulan: number }) => {
-            return item.umur_bulan == ageInMonths;
-        });
-        
-        return res.status(200).json({
-            status: "Success",
-            message: "Data successfully retrieved",
-            data: {
-                name: anthropometryData.name,
-                weight: Math.round(anthropometryData.weight),
-                height: Math.round(anthropometryData.height),
-                age: Math.round(ageInYears), // Format age to 2 decimal places
-                bb_u: data.bb_u,
-                tb_u: data.tb_u,
-                bb_tb: data.bb_tb,
-                imt_u: data.imt_u,
-                lk_u: data.lk_u,
-                lla_u: data.lla_u,
-                data_bb_u: dataBbU[0],
-                data_tb_u: dataTbU[0],
-                data_imt_u: dataImtU[0]
+            if (!data) {
+                return res.status(404).json({
+                    status: "Failed",
+                    message: "Data not found"
+                });
             }
-        });
 
-    } catch (error) {
-        console.error("Internal Error", error);
-        return res.status(500).json({
-            status: "Failed",
-            message: "Internal server error",
-            error: error
-        });
-    }
+            const anthropometryData = await anthropometryService.findDataById(data.anthropometry_id);
+
+            if (!anthropometryData) {
+                return res.status(404).json({
+                    status: "Failed",
+                    message: "Anthropometry data not found"
+                });
+            }
+
+            // Calculate age
+            const measurementDate = new Date(anthropometryData.measurement_date);
+            const birthDate = new Date(anthropometryData.birth_date);
+            const ageInMilliseconds = measurementDate.getTime() - birthDate.getTime();
+            const ageInYears = ageInMilliseconds / (1000 * 60 * 60 * 24 * 365.25);
+            const ageInMonths = Math.round(ageInMilliseconds / (1000 * 60 * 60 * 24 * 30.44));
+
+            const gender = anthropometryData.gender === "male" ? 'male' : 'female';
+
+            const fileBbU = `database/datas/${gender}/data-bb-u.json`;
+            const fileTbU = `database/datas/${gender}/data-tb-u.json`;
+            const fileImtU = `database/datas/${gender}/data-imt-u.json`;
+
+            const fileBbUPath = path.join(fileBbU);
+            const fileTbUPath = path.join(fileTbU);
+            const fileImtUPath = path.join(fileImtU);
+
+            const dataBbuJson = await fs.readFile(fileBbUPath, 'utf8');
+            const jsonBbuData = JSON.parse(dataBbuJson);
+            
+            const dataTbuJson = await fs.readFile(fileTbUPath, 'utf8');
+            const jsonTbuData = JSON.parse(dataTbuJson);
+
+            const dataImtUJson = await fs.readFile(fileImtUPath, 'utf8');
+            const jsonImtuData = JSON.parse(dataImtUJson);
+
+            const dataBbU = jsonBbuData.filter((item: { umur_bulan: number }) => {
+                return item.umur_bulan == ageInMonths;
+            });
+            
+            const dataTbU = jsonTbuData.filter((item: { umur_bulan: number }) => {
+                return item.umur_bulan == ageInMonths;
+            });
+
+            const dataImtU = jsonImtuData.filter((item: { umur_bulan: number }) => {
+                return item.umur_bulan == ageInMonths;
+            });
+
+            const zScore = data.bb_u - dataBbU[0].median;
+            console.log(zScore);
+
+            // Define category boundaries
+            const minus2SD = dataBbU.minus_2_sd;
+            const minus1SD = dataBbU.minus_1_sd;
+            const plus1SD = dataBbU.plus_1_sd;
+
+            // Determine the category
+            let category: string;
+
+            if (zScore <= minus2SD) {
+                category = 'Gizi Buruk'; // Malnutrition
+            } else if (zScore <= minus1SD) {
+                category = 'Gizi Kurang'; // Underweight
+            } else if (zScore <= plus1SD) {
+                category = 'Gizi Baik'; // Normal Weight
+            } else {
+                category = 'Gizi Lebih'; // Overweight
+            }
+
+            // Initialize category counts
+            const categoryCounts: CategoryCounts = {
+                'Gizi Buruk': 0,
+                'Gizi Kurang': 0,
+                'Gizi Baik': 0,
+                'Gizi Lebih': 0
+            };
+
+            // Update category count
+            categoryCounts[category] += 1;
+
+            // Calculate percentages for pie chart
+            const total = Object.values(categoryCounts).reduce((sum, count) => sum + count, 0);
+            const pieChartData = {
+                'gizi_buruk': (categoryCounts['Gizi Buruk'] / total) * 100,
+                'gizi_kurang': (categoryCounts['Gizi Kurang'] / total) * 100,
+                'gizi_baik': (categoryCounts['Gizi Baik'] / total) * 100,
+                'gizi_lebih': (categoryCounts['Gizi Lebih'] / total) * 100
+            };
+            
+            return res.status(200).json({
+                status: "Success",
+                message: "Data successfully retrieved",
+                data: {
+                    name: anthropometryData.name,
+                    weight: Math.round(anthropometryData.weight),
+                    height: Math.round(anthropometryData.height),
+                    age: Math.round(ageInYears), // Format age to 2 decimal places
+                    bb_u: data.bb_u,
+                    tb_u: data.tb_u,
+                    bb_tb: data.bb_tb,
+                    imt_u: data.imt_u,
+                    lk_u: data.lk_u,
+                    lla_u: data.lla_u,
+                    data_bb_u: dataBbU[0],
+                    data_tb_u: dataTbU[0],
+                    data_imt_u: dataImtU[0],
+                    data_gizi: pieChartData
+                }
+            });
+
+        } catch (error) {
+            console.error("Internal Error", error);
+            return res.status(500).json({
+                status: "Failed",
+                message: "Internal server error",
+                error: error
+            });
+        }
     }
 
 }
