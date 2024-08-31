@@ -225,6 +225,7 @@ export class AnthropometryController {
                     }
     
                     userResults.push({
+                        id: result.id,
                         name: anthropometryData.name,
                         ageInMonths: Math.round(ageInMonths),
                         weight: Math.round(anthropometryData.weight),
