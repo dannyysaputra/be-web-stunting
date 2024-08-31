@@ -880,26 +880,9 @@
                             "type": "number",
                             "example": 170
                           },
-                          "pieChartData": {
-                            "type": "object",
-                            "properties": {
-                              "gizi_buruk": {
-                                "type": "number",
-                                "example": 10
-                              },
-                              "gizi_kurang": {
-                                "type": "number",
-                                "example": 20
-                              },
-                              "gizi_baik": {
-                                "type": "number",
-                                "example": 50
-                              },
-                              "gizi_lebih": {
-                                "type": "number",
-                                "example": 20
-                              }
-                            }
+                          "category": {
+                            "type": "string",
+                            "example": "Gizi Buruk"
                           }
                         }
                       }
