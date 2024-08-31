@@ -224,28 +224,12 @@ export class AnthropometryController {
                         category = 'Gizi Lebih'; // Overweight
                     }
     
-                    const categoryCounts: CategoryCounts = {
-                        'Gizi Buruk': 0,
-                        'Gizi Kurang': 0,
-                        'Gizi Baik': 0,
-                        'Gizi Lebih': 0
-                    };
-                    categoryCounts[category] += 1;
-    
-                    const total = Object.values(categoryCounts).reduce((sum, count) => sum + count, 0);
-                    const pieChartData = {
-                        'gizi_buruk': (categoryCounts['Gizi Buruk'] / total) * 100,
-                        'gizi_kurang': (categoryCounts['Gizi Kurang'] / total) * 100,
-                        'gizi_baik': (categoryCounts['Gizi Baik'] / total) * 100,
-                        'gizi_lebih': (categoryCounts['Gizi Lebih'] / total) * 100
-                    };
-    
                     userResults.push({
                         name: anthropometryData.name,
                         ageInMonths: Math.round(ageInMonths),
                         weight: Math.round(anthropometryData.weight),
                         height: Math.round(anthropometryData.height),
-                        pieChartData,
+                        category: category
                     });
                 }
             }
