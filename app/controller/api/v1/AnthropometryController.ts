@@ -17,17 +17,17 @@ type CategoryCounts = {
 export class AnthropometryController {
     public static async create(req: Request, res: Response): Promise<Response> {
         try {
-            const { name, measurement_date, birth_date, gender, 
-                weight, height, head_circumference, arm_circumference }: AnthropometryType = req.body;
-            const userId = req.user?.id;
+                const { name, measurement_date, birth_date, gender, 
+                    weight, height, head_circumference, arm_circumference }: AnthropometryType = req.body;
+                const userId = req.user?.id;
 
-            if (!name || !measurement_date || !birth_date || !gender || 
-                !weight || !height || !head_circumference || !arm_circumference) {
-                    return res.status(400).json({
-                        status: "Failed",
-                        message: "Please provide a valid input"
-                    });
-            }
+                if (!name || !measurement_date || !birth_date || !gender || 
+                    !weight || !height || !head_circumference || !arm_circumference) {
+                        return res.status(400).json({
+                            status: "Failed",
+                            message: "Please provide a valid input"
+                        });
+                }
 
             const data = await anthropometryService.createData({
                 name,
@@ -180,6 +180,93 @@ export class AnthropometryController {
         }
     }
 
+    public static async getAnthropometryResultsByUser(req: Request, res: Response): Promise<Response> {
+        const fs = require('fs').promises;
+        const path = require('path');
+    
+        try {
+            const userId = req.user?.id; // Get the logged-in user's ID
+    
+            // Fetch all anthropometry results
+            const allResults = await anthropometryResultService.getAnthropometryResults();
+    
+            // Filter results to include only those that belong to the logged-in user
+            const userResults = [];
+    
+            for (const result of allResults) {
+                const anthropometryData = await anthropometryService.findDataById(result.anthropometry_id);
+    
+                if (anthropometryData && anthropometryData.user_id === userId) {
+                    const measurementDate = new Date(anthropometryData.measurement_date);
+                    const birthDate = new Date(anthropometryData.birth_date);
+                    const ageInMilliseconds = measurementDate.getTime() - birthDate.getTime();
+                    const ageInMonths = Math.round(ageInMilliseconds / (1000 * 60 * 60 * 24 * 30.44));
+    
+                    const gender = anthropometryData.gender === "Laki-laki" ? 'male' : 'female';
+                    const fileBbU = `database/datas/${gender}/data-bb-u.json`;
+                    const fileBbUPath = path.join(fileBbU);
+                    const dataBbuJson = await fs.readFile(fileBbUPath, 'utf8');
+                    const jsonBbuData = JSON.parse(dataBbuJson);
+                    const dataBbU = jsonBbuData.filter((item: { umur_bulan: number }) => {
+                        return item.umur_bulan == ageInMonths;
+                    });
+    
+                    const zScore = result.bb_u - dataBbU[0].median;
+    
+                    let category: string;
+                    if (zScore <= dataBbU[0].minus_2_sd) {
+                        category = 'Gizi Buruk'; // Malnutrition
+                    } else if (zScore <= dataBbU[0].minus_1_sd) {
+                        category = 'Gizi Kurang'; // Underweight
+                    } else if (zScore <= dataBbU[0].plus_1_sd) {
+                        category = 'Gizi Baik'; // Normal Weight
+                    } else {
+                        category = 'Gizi Lebih'; // Overweight
+                    }
+    
+                    const categoryCounts: CategoryCounts = {
+                        'Gizi Buruk': 0,
+                        'Gizi Kurang': 0,
+                        'Gizi Baik': 0,
+                        'Gizi Lebih': 0
+                    };
+                    categoryCounts[category] += 1;
+    
+                    const total = Object.values(categoryCounts).reduce((sum, count) => sum + count, 0);
+                    const pieChartData = {
+                        'gizi_buruk': (categoryCounts['Gizi Buruk'] / total) * 100,
+                        'gizi_kurang': (categoryCounts['Gizi Kurang'] / total) * 100,
+                        'gizi_baik': (categoryCounts['Gizi Baik'] / total) * 100,
+                        'gizi_lebih': (categoryCounts['Gizi Lebih'] / total) * 100
+                    };
+    
+                    userResults.push({
+                        name: anthropometryData.name,
+                        ageInMonths: Math.round(ageInMonths),
+                        weight: Math.round(anthropometryData.weight),
+                        height: Math.round(anthropometryData.height),
+                        pieChartData,
+                    });
+                }
+            }
+    
+            return res.status(200).json({
+                status: "Success",
+                message: "Data successfully retrieved",
+                data: userResults
+            });
+    
+        } catch (error) {
+            console.error("Internal Error", error);
+            return res.status(500).json({
+                status: "Failed",
+                message: "Internal server error",
+                error: error
+            });
+        }
+    }
+    
+
     public static async anthropometryResultById(req: Request, res: Response): Promise<Response> {
         const fs = require('fs').promises;
         const path = require('path');
@@ -213,7 +300,7 @@ export class AnthropometryController {
             const ageInYears = ageInMilliseconds / (1000 * 60 * 60 * 24 * 365.25);
             const ageInMonths = Math.round(ageInMilliseconds / (1000 * 60 * 60 * 24 * 30.44));
 
-            const gender = anthropometryData.gender === "male" ? 'male' : 'female';
+            const gender = anthropometryData.gender === "Laki-laki" ? 'male' : 'female';
 
             const fileBbU = `database/datas/${gender}/data-bb-u.json`;
             const fileTbU = `database/datas/${gender}/data-tb-u.json`;

@@ -830,6 +830,94 @@
         }
       }
     },
+    "/anthropometry-results": {
+      "get": {
+        "summary": "Get anthropometry results for the logged-in user",
+        "tags": ["Anthropometry"],
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully retrieved anthropometry results",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "Success"
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Data successfully retrieved"
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "integer",
+                            "example": 1
+                          },
+                          "name": {
+                            "type": "string",
+                            "example": "John Doe"
+                          },
+                          "ageInMonths": {
+                            "type": "integer",
+                            "example": 24
+                          },
+                          "weight": {
+                            "type": "number",
+                            "example": 70
+                          },
+                          "height": {
+                            "type": "number",
+                            "example": 170
+                          },
+                          "pieChartData": {
+                            "type": "object",
+                            "properties": {
+                              "gizi_buruk": {
+                                "type": "number",
+                                "example": 10
+                              },
+                              "gizi_kurang": {
+                                "type": "number",
+                                "example": 20
+                              },
+                              "gizi_baik": {
+                                "type": "number",
+                                "example": 50
+                              },
+                              "gizi_lebih": {
+                                "type": "number",
+                                "example": 20
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
     "/anthropometry/result/{id}": {
       "get": {
         "summary": "Retrieve anthropometry result by ID",
