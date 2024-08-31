@@ -282,10 +282,9 @@ export class AnthropometryController {
             const measurementDate = new Date(anthropometryData.measurement_date);
             const birthDate = new Date(anthropometryData.birth_date);
             const ageInMilliseconds = measurementDate.getTime() - birthDate.getTime();
-            const ageInYears = ageInMilliseconds / (1000 * 60 * 60 * 24 * 365.25);
             const ageInMonths = Math.round(ageInMilliseconds / (1000 * 60 * 60 * 24 * 30.44));
 
-            const gender = anthropometryData.gender === "Laki-laki" ? 'male' : 'female';
+            const gender = anthropometryData.gender == "Laki-laki" ? 'male' : 'female';
 
             const fileBbU = `database/datas/${gender}/data-bb-u.json`;
             const fileTbU = `database/datas/${gender}/data-tb-u.json`;

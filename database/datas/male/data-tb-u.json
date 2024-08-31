@@ -1,6 +1,6 @@
 [
   {
-    "umur_bulan_bulan": 0,
+    "umur_bulan": 0,
     "minus_3_sd": 44.2,
     "minus_2_sd": 46.1,
     "minus_1_sd": 48.0,
@@ -10,7 +10,7 @@
     "plus_3_sd": 55.6
   },
   {
-    "umur_bulan_bulan": 1,
+    "umur_bulan": 1,
     "minus_3_sd": 48.9,
     "minus_2_sd": 50.8,
     "minus_1_sd": 52.8,
@@ -20,7 +20,7 @@
     "plus_3_sd": 60.6
   },
   {
-    "umur_bulan_bulan": 2,
+    "umur_bulan": 2,
     "minus_3_sd": 52.4,
     "minus_2_sd": 54.4,
     "minus_1_sd": 56.4,
@@ -30,7 +30,7 @@
     "plus_3_sd": 64.4
   },
   {
-    "umur_bulan_bulan": 3,
+    "umur_bulan": 3,
     "minus_3_sd": 55.3,
     "minus_2_sd": 57.3,
     "minus_1_sd": 59.4,
@@ -40,7 +40,7 @@
     "plus_3_sd": 67.6
   },
   {
-    "umur_bulan_bulan": 4,
+    "umur_bulan": 4,
     "minus_3_sd": 57.6,
     "minus_2_sd": 59.7,
     "minus_1_sd": 61.8,
@@ -50,7 +50,7 @@
     "plus_3_sd": 70.1
   },
   {
-    "umur_bulan_bulan": 5,
+    "umur_bulan": 5,
     "minus_3_sd": 59.6,
     "minus_2_sd": 61.7,
     "minus_1_sd": 63.8,
@@ -60,7 +60,7 @@
     "plus_3_sd": 72.2
   },
   {
-    "umur_bulan_bulan": 6,
+    "umur_bulan": 6,
     "minus_3_sd": 61.2,
     "minus_2_sd": 63.3,
     "minus_1_sd": 65.5,
@@ -70,7 +70,7 @@
     "plus_3_sd": 74.0
   },
   {
-    "umur_bulan_bulan": 7,
+    "umur_bulan": 7,
     "minus_3_sd": 62.7,
     "minus_2_sd": 64.9,
     "minus_1_sd": 67.0,
@@ -80,7 +80,7 @@
     "plus_3_sd": 75.7
   },
   {
-    "umur_bulan_bulan": 8,
+    "umur_bulan": 8,
     "minus_3_sd": 64.0,
     "minus_2_sd": 66.2,
     "minus_1_sd": 68.4,
@@ -90,7 +90,7 @@
     "plus_3_sd": 77.2
   },
   {
-    "umur_bulan_bulan": 9,
+    "umur_bulan": 9,
     "minus_3_sd": 65.2,
     "minus_2_sd": 67.5,
     "minus_1_sd": 69.7,
@@ -100,7 +100,7 @@
     "plus_3_sd": 78.6
   },
   {
-    "umur_bulan_bulan": 10,
+    "umur_bulan": 10,
     "minus_3_sd": 66.4,
     "minus_2_sd": 68.6,
     "minus_1_sd": 71.0,
@@ -110,7 +110,7 @@
     "plus_3_sd": 80.1
   },
   {
-    "umur_bulan_bulan": 11,
+    "umur_bulan": 11,
     "minus_3_sd": 67.6,
     "minus_2_sd": 69.9,
     "minus_1_sd": 72.2,
@@ -120,7 +120,7 @@
     "plus_3_sd": 81.5
   },
   {
-    "umur_bulan_bulan": 12,
+    "umur_bulan": 12,
     "minus_3_sd": 68.6,
     "minus_2_sd": 71.0,
     "minus_1_sd": 73.4,
@@ -130,7 +130,7 @@
     "plus_3_sd": 82.9
   },
   {
-    "umur_bulan_bulan": 13,
+    "umur_bulan": 13,
     "minus_3_sd": 69.6,
     "minus_2_sd": 72.1,
     "minus_1_sd": 74.5,
@@ -140,7 +140,7 @@
     "plus_3_sd": 84.2
   },
   {
-    "umur_bulan_bulan": 14,
+    "umur_bulan": 14,
     "minus_3_sd": 70.6,
     "minus_2_sd": 73.2,
     "minus_1_sd": 75.6,
@@ -150,7 +150,7 @@
     "plus_3_sd": 85.5
   },
   {
-    "umur_bulan_bulan": 15,
+    "umur_bulan": 15,
     "minus_3_sd": 71.6,
     "minus_2_sd": 74.1,
     "minus_1_sd": 76.6,
@@ -160,7 +160,7 @@
     "plus_3_sd": 86.7
   },
   {
-    "umur_bulan_bulan": 16,
+    "umur_bulan": 16,
     "minus_3_sd": 72.5,
     "minus_2_sd": 75.0,
     "minus_1_sd": 77.6,
@@ -170,7 +170,7 @@
     "plus_3_sd": 88.0
   },
   {
-    "umur_bulan_bulan": 17,
+    "umur_bulan": 17,
     "minus_3_sd": 73.3,
     "minus_2_sd": 75.9,
     "minus_1_sd": 78.5,
@@ -180,7 +180,7 @@
     "plus_3_sd": 89.2
   },
   {
-    "umur_bulan_bulan": 18,
+    "umur_bulan": 18,
     "minus_3_sd": 74.2,
     "minus_2_sd": 76.9,
     "minus_1_sd": 79.5,
@@ -190,7 +190,7 @@
     "plus_3_sd": 90.3
   },
   {
-    "umur_bulan_bulan": 19,
+    "umur_bulan": 19,
     "minus_3_sd": 75.0,
     "minus_2_sd": 77.7,
     "minus_1_sd": 80.4,
@@ -200,7 +200,7 @@
     "plus_3_sd": 91.5
   },
   {
-    "umur_bulan_bulan": 20,
+    "umur_bulan": 20,
     "minus_3_sd": 75.8,
     "minus_2_sd": 78.6,
     "minus_1_sd": 81.3,
@@ -210,7 +210,7 @@
     "plus_3_sd": 92.8
   },
   {
-    "umur_bulan_bulan": 21,
+    "umur_bulan": 21,
     "minus_3_sd": 76.5,
     "minus_2_sd": 79.4,
     "minus_1_sd": 82.2,
@@ -220,7 +220,7 @@
     "plus_3_sd": 93.8
   },
   {
-    "umur_bulan_bulan": 22,
+    "umur_bulan": 22,
     "minus_3_sd": 77.2,
     "minus_2_sd": 80.2,
     "minus_1_sd": 83.1,
@@ -230,7 +230,7 @@
     "plus_3_sd": 94.9
   },
   {
-    "umur_bulan_bulan": 23,
+    "umur_bulan": 23,
     "minus_3_sd": 77.8,
     "minus_2_sd": 80.9,
     "minus_1_sd": 83.9,
@@ -240,7 +240,7 @@
     "plus_3_sd": 95.8
   },
   {
-    "umur_bulan_bulan": 24,
+    "umur_bulan": 24,
     "minus_3_sd": 78.7,
     "minus_2_sd": 81.7,
     "minus_1_sd": 84.8,
