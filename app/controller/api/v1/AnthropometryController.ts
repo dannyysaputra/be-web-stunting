@@ -364,7 +364,7 @@ export class AnthropometryController {
                     name: anthropometryData.name,
                     weight: Math.round(anthropometryData.weight),
                     height: Math.round(anthropometryData.height),
-                    age: Math.round(ageInYears), // Format age to 2 decimal places
+                    age: Math.round(ageInMonths), // Format age to 2 decimal places
                     bb_u: data.bb_u,
                     tb_u: data.tb_u,
                     bb_tb: data.bb_tb,
