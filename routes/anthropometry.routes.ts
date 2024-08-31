@@ -10,5 +10,6 @@ router.put("/:id", authorize, AnthropometryController.update);
 router.delete("/:id", authorize, AnthropometryController.delete);
 
 router.get("/result/:id", authorize, AnthropometryController.anthropometryResultById);
+router.get("/result", authorize, AnthropometryController.getAnthropometryResultsByUser);
 
 export default router;
